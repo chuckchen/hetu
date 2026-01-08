@@ -28,7 +28,7 @@ import {
 } from 'lucide-react';
 import { Header, Footer } from '../components/layout';
 import { Button, Card } from '../components/ui';
-import { useHetuGateway, RequestInfo } from '../hooks/useHetuGateway';
+import { useHetuGateway, type RequestInfo } from '../hooks/useHetuGateway';
 import { useConfidentialToken } from '../hooks/useConfidentialToken';
 import { TOKEN_CONFIG } from '../lib/contracts';
 import { formatAddress } from '../lib/utils';

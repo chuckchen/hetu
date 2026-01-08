@@ -33,7 +33,6 @@ export function Send() {
   const [amount, setAmount] = useState('');
   const [note, setNote] = useState('');
   const [error, setError] = useState('');
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [txHash, setTxHash] = useState<string | null>(null);
 
   // Real blockchain hooks
@@ -494,6 +493,20 @@ export function Send() {
                       <p className="text-gray-400 font-mono text-sm mb-8">
                         to {formatAddress(recipient)}
                       </p>
+
+                      {txHash && (
+                        <div className="mb-8">
+                          <a
+                            href={`https://sepolia.etherscan.io/tx/${txHash}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-paypal-blue hover:text-paypal-dark transition-colors font-medium"
+                          >
+                            View on Etherscan
+                            <ArrowRight className="w-4 h-4" />
+                          </a>
+                        </div>
+                      )}
                     </motion.div>
 
                     {/* Privacy Badge */}

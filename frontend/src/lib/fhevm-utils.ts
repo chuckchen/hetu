@@ -3,15 +3,15 @@
  * Helper functions for FHEVM encryption and type conversions
  */
 
-import { hexlify } from 'ethers';
+import { toHex } from 'viem';
 
 /**
- * Convert Uint8Array to hex string using ethers
+ * Convert Uint8Array to hex string using viem
  * @param bytes - The bytes to convert
  * @returns Hex string with 0x prefix
  */
-export function toHex(bytes: Uint8Array): `0x${string}` {
-  return hexlify(bytes) as `0x${string}`;
+export function toHexHelper(bytes: Uint8Array | string): `0x${string}` {
+  return typeof bytes === 'string' ? (bytes.startsWith('0x') ? bytes as `0x${string}` : `0x${bytes}`) : toHex(bytes);
 }
 
 /**
@@ -78,7 +78,7 @@ export function formatEncryptedParams(
     switch (input.type) {
       case 'bytes32':
       case 'bytes':
-        return hexlify(raw);
+        return toHexHelper(raw);
       case 'uint256':
         return BigInt(raw as unknown as string);
       case 'address':
@@ -88,7 +88,7 @@ export function formatEncryptedParams(
         return Boolean(raw);
       default:
         console.warn(`Unknown ABI param type ${input.type}; passing as hex`);
-        return hexlify(raw);
+        return toHexHelper(raw);
     }
   });
 }

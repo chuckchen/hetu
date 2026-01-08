@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import { Header, Footer } from '../components/layout';
 import { Card, Button } from '../components/ui';
-import { useTransactionHistory, Transaction } from '../hooks/useTransactionHistory';
+import { useTransactionHistory, type Transaction } from '../hooks/useTransactionHistory';
 import { formatAddress } from '../lib/utils';
 import toast from 'react-hot-toast';
 
