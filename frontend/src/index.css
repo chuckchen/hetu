@@ -6,16 +6,21 @@
 
 /* Custom CSS Variables */
 :root {
-  /* Primary Colors (PayPal Blue) */
-  --color-primary: #003087;
-  --color-primary-light: #0070BA;
-  --color-primary-dark: #001F5C;
-  --color-primary-hover: #001F5C;
+  /* Primary Colors (Dark Cyan) */
+  --color-primary: #008B8B;
+  --color-primary-light: #20B2AA;
+  --color-primary-dark: #006666;
+  --color-primary-hover: #006666;
+
+  /* Secondary Colors (Coral) */
+  --color-secondary: #FF7F50;
+  --color-secondary-light: #FFA07A;
+  --color-secondary-dark: #CD5B45;
 
   /* Backgrounds */
   --color-bg-white: #FFFFFF;
   --color-bg-light: #F5F7FA;
-  --color-bg-dark: #001435;
+  --color-bg-dark: #002B2B;
 
   /* Text */
   --color-text-primary: #2C2E2F;
@@ -92,11 +97,14 @@ a:hover {
 
 /* Custom Theme Colors for Tailwind */
 @theme {
-  /* PayPal Blue Colors */
-  --color-paypal-blue: #003087;
-  --color-paypal-light: #0070BA;
-  --color-paypal-dark: #001F5C;
-  --color-paypal-navy: #001435;
+  /* Brand Colors */
+  --color-brand-primary: #008B8B;
+  --color-brand-primary-light: #20B2AA;
+  --color-brand-primary-dark: #006666;
+  --color-brand-secondary: #FF7F50;
+  --color-brand-secondary-light: #FFA07A;
+  --color-brand-secondary-dark: #CD5B45;
+  --color-brand-navy: #002B2B;
 
   /* Status */
   --color-success: #019267;

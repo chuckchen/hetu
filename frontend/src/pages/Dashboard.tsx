@@ -189,7 +189,7 @@ export function Dashboard() {
             >
               <div className="relative overflow-hidden rounded-3xl">
                 {/* Gradient Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-paypal-blue via-blue-600 to-indigo-700" />
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-primary via-brand-primary to-brand-navy" />
                 
                 {/* Decorative Elements */}
                 <div className="absolute inset-0 overflow-hidden">
@@ -274,7 +274,7 @@ export function Dashboard() {
 
                   <div className="flex flex-wrap gap-3">
                     <Link to="/send">
-                      <Button className="bg-white text-paypal-blue hover:bg-white/90 shadow-lg shadow-black/10 px-6">
+                      <Button className="bg-white text-brand-primary hover:bg-white/90 shadow-lg shadow-black/10 px-6">
                         <Send className="w-4 h-4 mr-2" />
                         Send
                       </Button>
@@ -317,8 +317,8 @@ export function Dashboard() {
               ].map((stat) => (
                 <Card key={stat.label} className="p-4 hover:shadow-md transition-shadow">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-paypal-navy/10 rounded-xl flex items-center justify-center">
-                      <stat.icon className="w-5 h-5 text-paypal-navy" />
+                    <div className="w-10 h-10 bg-brand-navy/10 rounded-xl flex items-center justify-center">
+                      <stat.icon className="w-5 h-5 text-brand-navy" />
                     </div>
                     <div>
                       <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
@@ -341,7 +341,7 @@ export function Dashboard() {
                     <h2 className="text-xl font-bold text-gray-900">Recent Activity</h2>
                     <Link 
                       to="/activity" 
-                      className="text-sm text-paypal-blue hover:text-paypal-dark font-medium flex items-center gap-1 group"
+                      className="text-sm text-brand-primary hover:text-brand-primary-dark font-medium flex items-center gap-1 group"
                     >
                       View All
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -354,7 +354,7 @@ export function Dashboard() {
                     <motion.div
                       animate={{ rotate: 360 }}
                       transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                      className="w-10 h-10 border-4 border-paypal-blue/20 border-t-paypal-blue rounded-full mx-auto mb-4"
+                      className="w-10 h-10 border-4 border-brand-primary/20 border-t-brand-primary rounded-full mx-auto mb-4"
                     />
                     <p className="text-gray-500 text-sm">Loading transactions...</p>
                   </div>
@@ -365,11 +365,11 @@ export function Dashboard() {
                         <div className="flex items-center gap-4">
                           <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
                             tx.type === 'sent' ? 'bg-red-50' :
-                            tx.type === 'received' ? 'bg-green-50' : 'bg-blue-50'
+                            tx.type === 'received' ? 'bg-green-50' : 'bg-brand-primary-light/10'
                           }`}>
                             {tx.type === 'sent' && <ArrowUpRight className="w-5 h-5 text-red-500" />}
                             {tx.type === 'received' && <ArrowDownLeft className="w-5 h-5 text-green-500" />}
-                            {tx.type === 'refund' && <RotateCcw className="w-5 h-5 text-paypal-blue" />}
+                            {tx.type === 'refund' && <RotateCcw className="w-5 h-5 text-brand-primary" />}
                           </div>
                           <div className="flex-1 min-w-0">
                             <p className="font-medium text-gray-900 capitalize">{tx.type}</p>
@@ -381,7 +381,7 @@ export function Dashboard() {
                           <div className="text-right">
                             <p className={`font-bold ${
                               tx.type === 'sent' ? 'text-red-600' :
-                              tx.type === 'received' ? 'text-green-600' : 'text-paypal-blue'
+                              tx.type === 'received' ? 'text-green-600' : 'text-brand-primary'
                             }`}>
                               {tx.type === 'sent' ? '-' : '+'}$••••
                             </p>
@@ -403,7 +403,7 @@ export function Dashboard() {
                       <motion.div
                         animate={{ scale: [1, 1.2, 1] }}
                         transition={{ duration: 2, repeat: Infinity }}
-                        className="absolute -top-1 -right-1 w-6 h-6 bg-paypal-blue rounded-full flex items-center justify-center"
+                        className="absolute -top-1 -right-1 w-6 h-6 bg-brand-primary rounded-full flex items-center justify-center"
                       >
                         <Sparkles className="w-3 h-3 text-white" />
                       </motion.div>
@@ -414,7 +414,7 @@ export function Dashboard() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
                       <Link to="/send">
-                        <Button className="bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/20">
+                        <Button className="bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/20">
                           <Send className="w-4 h-4 mr-2" />
                           Send Money
                         </Button>
@@ -485,14 +485,14 @@ export function Dashboard() {
                   ].map((action) => (
                     <Link key={action.to} to={action.to} className="block">
                       <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors group">
-                        <div className="w-12 h-12 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+                        <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-xl flex items-center justify-center shadow-lg shadow-brand-primary/20 group-hover:scale-105 transition-transform">
                           <action.icon className="w-5 h-5 text-white" />
                         </div>
                         <div className="flex-1">
                           <p className="font-semibold text-gray-900">{action.title}</p>
                           <p className="text-sm text-gray-500">{action.desc}</p>
                         </div>
-                        <ArrowRight className="w-5 h-5 text-gray-300 group-hover:text-paypal-blue group-hover:translate-x-0.5 transition-all" />
+                        <ArrowRight className="w-5 h-5 text-gray-300 group-hover:text-brand-primary group-hover:translate-x-0.5 transition-all" />
                       </div>
                     </Link>
                   ))}
@@ -513,7 +513,7 @@ export function Dashboard() {
                     href={`https://sepolia.etherscan.io/address/${address}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-paypal-blue hover:text-paypal-dark"
+                    className="text-brand-primary hover:text-brand-primary-dark"
                   >
                     <ExternalLink className="w-4 h-4" />
                   </a>
@@ -545,11 +545,11 @@ export function Dashboard() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-paypal-blue/10 via-blue-50 to-indigo-50 border border-blue-100/50">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-transparent rounded-full blur-2xl" />
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-primary/10 via-brand-primary-light/10 to-brand-primary-light/5 border border-brand-primary-light/20/50">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-primary-light/20 to-transparent rounded-full blur-2xl" />
                 <div className="relative p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-xl flex items-center justify-center shadow-lg">
                       <Shield className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -601,7 +601,7 @@ export function Dashboard() {
                     level="H"
                     includeMargin
                     bgColor="#ffffff"
-                    fgColor="#001435"
+                    fgColor="#002B2B"
                   />
                 </div>
                 
@@ -625,7 +625,7 @@ export function Dashboard() {
                   </Button>
                   <Button
                     onClick={handleDownloadQR}
-                    className="flex-1 bg-gradient-to-r from-paypal-blue to-blue-600"
+                    className="flex-1 bg-gradient-to-r from-brand-primary to-brand-primary-light"
                   >
                     <Download className="w-4 h-4 mr-2" />
                     Download

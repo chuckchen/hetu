@@ -56,19 +56,19 @@ export function useFhevmEncrypt() {
 
       try {
         console.log('[FHEVM] Encrypting amount:', amount.toString());
-        
+
         const encryptedInput = instance.createEncryptedInput(
           contractAddress,
           address
         );
-        
+
         const result = await encryptedInput.add64(amount).encrypt();
-        
+
         console.log('[FHEVM] Raw encryption result:', result);
-        
+
         // SDK returns Uint8Array - convert to hex strings for viem
         const { handles, inputProof } = result;
-        
+
         // Convert handles array to hex strings
         const hexHandles = handles.map((h: unknown) => {
           if (typeof h === 'string' && h.startsWith('0x')) {
@@ -76,14 +76,14 @@ export function useFhevmEncrypt() {
           }
           return uint8ArrayToHex(h as Uint8Array);
         });
-        
+
         // Convert inputProof to hex string
         const hexProof = typeof inputProof === 'string' && inputProof.startsWith('0x')
           ? inputProof as `0x${string}`
           : uint8ArrayToHex(inputProof as unknown as Uint8Array);
-        
+
         console.log('[FHEVM] Converted - handles:', hexHandles, 'proof:', hexProof);
-        
+
         return { handles: hexHandles, inputProof: hexProof };
       } catch (err) {
         console.error('[FHEVM] Encryption failed:', err);
@@ -93,7 +93,7 @@ export function useFhevmEncrypt() {
         setIsEncrypting(false);
       }
     },
-    [instance, address, isReady, isConnected]
+    [instance, address, isReady, isConnected, MAX_UINT64]
   );
 
   return {

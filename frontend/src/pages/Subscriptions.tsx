@@ -331,7 +331,7 @@ export function Subscriptions() {
                 navigate('/dashboard');
               }
             }}
-            className="flex items-center gap-2 text-gray-500 hover:text-paypal-blue mb-6 transition-colors group"
+            className="flex items-center gap-2 text-gray-500 hover:text-brand-primary mb-6 transition-colors group"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             <span className="font-medium">{view !== 'list' ? 'Back to Subscriptions' : 'Back to Dashboard'}</span>
@@ -354,7 +354,7 @@ export function Subscriptions() {
                   </div>
                   <Button
                     onClick={() => setView('create')}
-                    className="bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/20"
+                    className="bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/20"
                   >
                     <Plus className="w-5 h-5 mr-2" />
                     New Subscription
@@ -363,9 +363,9 @@ export function Subscriptions() {
 
                 {/* Privacy Notice */}
                 <Card className="mb-6 overflow-hidden">
-                  <div className="bg-gradient-to-r from-paypal-blue/5 to-blue-50 p-4">
+                  <div className="bg-gradient-to-r from-brand-primary/5 to-brand-primary-light/10 p-4">
                     <div className="flex items-start gap-3">
-                      <Shield className="w-5 h-5 text-paypal-blue flex-shrink-0 mt-0.5" />
+                      <Shield className="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" />
                       <p className="text-sm text-gray-600">
                         <span className="font-semibold text-gray-900">Encrypted recurring payments.</span>{' '}
                         All subscription amounts are encrypted with FHE — only you and the recipient can see payment values.
@@ -381,7 +381,7 @@ export function Subscriptions() {
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                        className="w-12 h-12 border-4 border-paypal-blue/20 border-t-paypal-blue rounded-full mx-auto mb-4"
+                        className="w-12 h-12 border-4 border-brand-primary/20 border-t-brand-primary rounded-full mx-auto mb-4"
                       />
                       <p className="text-gray-500">Loading subscriptions...</p>
                     </div>
@@ -468,7 +468,7 @@ export function Subscriptions() {
                         <motion.div
                           animate={{ scale: [1, 1.2, 1] }}
                           transition={{ duration: 2, repeat: Infinity }}
-                          className="absolute -top-1 -right-1 w-6 h-6 bg-paypal-blue rounded-full flex items-center justify-center"
+                          className="absolute -top-1 -right-1 w-6 h-6 bg-brand-primary rounded-full flex items-center justify-center"
                         >
                           <Sparkles className="w-3 h-3 text-white" />
                         </motion.div>
@@ -479,7 +479,7 @@ export function Subscriptions() {
                       </p>
                       <Button
                         onClick={() => setView('create')}
-                        className="bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/20"
+                        className="bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/20"
                       >
                         <Plus className="w-5 h-5 mr-2" />
                         Create Subscription
@@ -514,11 +514,11 @@ export function Subscriptions() {
                   ].map((feature) => (
                     <div
                       key={feature.title}
-                      className="p-4 rounded-xl bg-gradient-to-br from-paypal-blue/5 to-blue-50 border border-blue-100/50"
+                      className="p-4 rounded-xl bg-gradient-to-br from-brand-primary/5 to-brand-primary-light/10 border border-brand-primary-light/20/50"
                     >
                       <div className="flex items-start gap-3">
                         <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm">
-                          <feature.icon className="w-5 h-5 text-paypal-blue" />
+                          <feature.icon className="w-5 h-5 text-brand-primary" />
                         </div>
                         <div>
                           <h4 className="font-semibold text-gray-900">{feature.title}</h4>
@@ -543,7 +543,7 @@ export function Subscriptions() {
                   <div className="p-8">
                     {/* Header */}
                     <div className="text-center mb-8">
-                      <div className="w-16 h-16 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/25">
+                      <div className="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-brand-primary/25">
                         <RefreshCw className="w-8 h-8 text-white" />
                       </div>
                       <h1 className="text-2xl font-bold text-gray-900 mb-2">
@@ -559,12 +559,12 @@ export function Subscriptions() {
                       <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="mb-6 p-4 bg-paypal-navy/5 border border-paypal-blue/20 rounded-xl"
+                        className="mb-6 p-4 bg-brand-navy/5 border border-brand-primary/20 rounded-xl"
                       >
                         <div className="flex items-start gap-3">
-                          <AlertCircle className="w-5 h-5 text-paypal-blue flex-shrink-0 mt-0.5" />
+                          <AlertCircle className="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" />
                           <div>
-                            <p className="text-sm font-semibold text-paypal-dark mb-1">
+                            <p className="text-sm font-semibold text-brand-primary-dark mb-1">
                               No cUSDC Balance
                             </p>
                             <p className="text-sm text-gray-600 mb-3">
@@ -573,7 +573,7 @@ export function Subscriptions() {
                             </p>
                             <Link
                               to="/wallet"
-                              className="inline-flex items-center gap-2 text-sm font-semibold text-paypal-blue hover:text-paypal-dark transition-colors"
+                              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary hover:text-brand-primary-dark transition-colors"
                             >
                               Wrap USDC → cUSDC
                               <ArrowRight className="w-4 h-4" />
@@ -596,7 +596,7 @@ export function Subscriptions() {
                             placeholder="0x..."
                             value={recipient}
                             onChange={(e) => setRecipient(e.target.value)}
-                            className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-100 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-paypal-blue focus:bg-white transition-all font-mono"
+                            className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-100 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-brand-primary focus:bg-white transition-all font-mono"
                           />
                         </div>
                       </div>
@@ -613,7 +613,7 @@ export function Subscriptions() {
                             placeholder="0.00"
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
-                            className="w-full pl-12 pr-20 py-4 bg-gray-50 border-2 border-gray-100 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-paypal-blue focus:bg-white transition-all"
+                            className="w-full pl-12 pr-20 py-4 bg-gray-50 border-2 border-gray-100 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-brand-primary focus:bg-white transition-all"
                           />
                           <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">
                             {TOKEN_CONFIG.symbol}
@@ -633,12 +633,12 @@ export function Subscriptions() {
                               onClick={() => setFrequency(option.value)}
                               className={`p-4 rounded-xl border-2 text-left transition-all ${
                                 frequency === option.value
-                                  ? 'border-paypal-blue bg-paypal-blue/5'
+                                  ? 'border-brand-primary bg-brand-primary/5'
                                   : 'border-gray-100 hover:border-gray-200 bg-gray-50'
                               }`}
                             >
                               <p className={`font-semibold ${
-                                frequency === option.value ? 'text-paypal-blue' : 'text-gray-900'
+                                frequency === option.value ? 'text-brand-primary' : 'text-gray-900'
                               }`}>
                                 {option.label}
                               </p>
@@ -661,9 +661,9 @@ export function Subscriptions() {
                       )}
 
                       {/* Privacy Notice */}
-                      <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-paypal-blue/5 to-blue-50/50 border border-blue-100/50 p-4">
+                      <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-brand-primary/5 to-brand-primary-light/10/50 border border-brand-primary-light/20/50 p-4">
                         <div className="flex items-start gap-3">
-                          <Shield className="w-5 h-5 text-paypal-blue flex-shrink-0 mt-0.5" />
+                          <Shield className="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" />
                           <p className="text-sm text-gray-600">
                             All subscription amounts are <span className="font-semibold text-gray-900">encrypted</span> using FHE. 
                             Only you and the recipient can see the payment amounts.
@@ -675,7 +675,7 @@ export function Subscriptions() {
                       <Button
                         onClick={handleCreateSubscription}
                         disabled={!fhevmReady || isProcessing || !isValidRecipient || !isValidAmount || !hasCusdcBalance}
-                        className="w-full bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/25"
+                        className="w-full bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/25"
                         size="lg"
                       >
                         {isProcessing ? (
@@ -752,7 +752,7 @@ export function Subscriptions() {
                         View All
                       </Button>
                       <Button
-                        className="flex-1 bg-gradient-to-r from-paypal-blue to-blue-600"
+                        className="flex-1 bg-gradient-to-r from-brand-primary to-brand-primary-light"
                         onClick={() => {
                           resetForm();
                           setView('create');

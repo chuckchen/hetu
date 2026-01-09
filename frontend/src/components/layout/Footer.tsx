@@ -5,14 +5,14 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-paypal-navy text-white">
+    <footer className="bg-brand-navy text-white">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl py-16 md:py-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
           {/* Logo & Description */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="inline-flex items-center gap-2.5 mb-5">
               <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
-                <Shield className="w-5 h-5 text-paypal-navy" />
+                <Shield className="w-5 h-5 text-brand-navy" />
               </div>
               <span className="text-xl font-bold">HETU</span>
             </Link>

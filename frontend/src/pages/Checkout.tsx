@@ -288,7 +288,7 @@ export function Checkout() {
   // Render loading state
   if (!checkoutData && step !== 'error') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#003087] to-[#0070ba] flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-[#008B8B] to-[#20B2AA] flex items-center justify-center">
         <Loader2 className="w-8 h-8 text-white animate-spin" />
       </div>
     );
@@ -297,7 +297,7 @@ export function Checkout() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col">
       {/* Header */}
-      <header className="bg-gradient-to-r from-[#003087] to-[#0070ba] text-white py-4 px-6 flex items-center justify-between">
+      <header className="bg-gradient-to-r from-[#008B8B] to-[#20B2AA] text-white py-4 px-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Shield className="w-6 h-6" />
           <span className="font-bold text-lg">Hetu Checkout</span>
@@ -404,7 +404,7 @@ function ConnectStep({ data, connectors, isConnecting, onConnect, showOptions, o
       className="bg-white rounded-2xl shadow-xl overflow-hidden"
     >
       {/* Payment Summary */}
-      <div className="bg-gradient-to-r from-[#003087] to-[#0070ba] text-white p-6">
+      <div className="bg-gradient-to-r from-[#008B8B] to-[#20B2AA] text-white p-6">
         <p className="text-sm opacity-80 mb-1">Payment to</p>
         <p className="font-mono text-sm mb-4">{formatAddress(data.merchant)}</p>
         <p className="text-4xl font-bold">${data.amount}</p>
@@ -423,7 +423,7 @@ function ConnectStep({ data, connectors, isConnecting, onConnect, showOptions, o
             <button
               onClick={() => onConnect(connectors[0])}
               disabled={isConnecting}
-              className="w-full flex items-center justify-center gap-3 bg-[#003087] hover:bg-[#002060] text-white py-3 px-4 rounded-xl font-medium transition-colors disabled:opacity-50"
+              className="w-full flex items-center justify-center gap-3 bg-[#008B8B] hover:bg-[#006666] text-white py-3 px-4 rounded-xl font-medium transition-colors disabled:opacity-50"
             >
               {isConnecting ? (
                 <Loader2 className="w-5 h-5 animate-spin" />
@@ -503,7 +503,7 @@ function ReviewStep({ data, address, hasCusdcBalance, hasUsdcBalance, usdcBalanc
       className="bg-white rounded-2xl shadow-xl overflow-hidden"
     >
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#003087] to-[#0070ba] text-white p-6">
+      <div className="bg-gradient-to-r from-[#008B8B] to-[#20B2AA] text-white p-6">
         <div className="flex items-center justify-between mb-4">
           <span className="text-sm opacity-80">Connected as</span>
           <button
@@ -573,7 +573,7 @@ function ReviewStep({ data, address, hasCusdcBalance, hasUsdcBalance, usdcBalanc
           <button
             onClick={onPay}
             disabled={!hasCusdcBalance || !fhevmReady}
-            className="flex-1 py-3 px-4 bg-[#003087] hover:bg-[#002060] text-white rounded-xl font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="flex-1 py-3 px-4 bg-[#008B8B] hover:bg-[#006666] text-white rounded-xl font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             <Shield className="w-5 h-5" />
             <span>Pay ${data.amount}</span>
@@ -596,8 +596,8 @@ function ProcessingStep() {
       exit={{ opacity: 0, scale: 0.95 }}
       className="bg-white rounded-2xl shadow-xl p-8 text-center"
     >
-      <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-        <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
+      <div className="w-16 h-16 bg-brand-primary-light/20 rounded-full flex items-center justify-center mx-auto mb-6">
+        <Loader2 className="w-8 h-8 text-brand-primary animate-spin" />
       </div>
       <h3 className="text-xl font-semibold text-gray-900 mb-2">Processing Payment</h3>
       <p className="text-gray-600">Please confirm the transaction in your wallet...</p>
@@ -675,7 +675,7 @@ function SuccessStep({ data, txHash, paymentId, onClose }: SuccessStepProps) {
             href={`https://sepolia.etherscan.io/tx/${txHash}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-blue-600 hover:underline text-sm"
+            className="flex items-center gap-2 text-brand-primary hover:underline text-sm"
           >
             <span>View on Etherscan</span>
             <ExternalLink className="w-4 h-4" />
@@ -684,7 +684,7 @@ function SuccessStep({ data, txHash, paymentId, onClose }: SuccessStepProps) {
 
         <button
           onClick={handleDone}
-          className="w-full py-3 px-4 bg-[#003087] hover:bg-[#002060] text-white rounded-xl font-medium transition-colors"
+          className="w-full py-3 px-4 bg-[#008B8B] hover:bg-[#006666] text-white rounded-xl font-medium transition-colors"
         >
           {data.isSDK ? 'Close' : (data.successUrl ? 'Continue' : 'Done')}
         </button>
@@ -722,7 +722,7 @@ function ErrorStep({ error, onRetry, onCancel }: ErrorStepProps) {
         </button>
         <button
           onClick={onRetry}
-          className="flex-1 py-3 px-4 bg-[#003087] hover:bg-[#002060] text-white rounded-xl font-medium transition-colors"
+          className="flex-1 py-3 px-4 bg-[#008B8B] hover:bg-[#006666] text-white rounded-xl font-medium transition-colors"
         >
           Try Again
         </button>

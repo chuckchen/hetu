@@ -192,7 +192,7 @@ export function Pay() {
                 else if (step === 'confirm') setStep('amount');
                 else navigate('/dashboard');
               }}
-              className="flex items-center gap-2 text-gray-500 hover:text-paypal-blue mb-6 transition-colors group"
+              className="flex items-center gap-2 text-gray-500 hover:text-brand-primary mb-6 transition-colors group"
             >
               <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               <span className="font-medium">Back</span>
@@ -213,7 +213,7 @@ export function Pay() {
                     <motion.div
                       animate={{ rotate: 360 }}
                       transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                      className="w-16 h-16 border-4 border-paypal-blue/20 border-t-paypal-blue rounded-full mx-auto mb-6"
+                      className="w-16 h-16 border-4 border-brand-primary/20 border-t-brand-primary rounded-full mx-auto mb-6"
                     />
                     <h2 className="text-xl font-bold text-gray-900 mb-2">Loading Request...</h2>
                     <p className="text-gray-500">Fetching payment details from chain</p>
@@ -238,7 +238,7 @@ export function Pay() {
                     <h2 className="text-xl font-bold text-gray-900 mb-2">Request Unavailable</h2>
                     <p className="text-gray-500 mb-8">{error}</p>
                     <Link to="/dashboard">
-                      <Button className="bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700">
+                      <Button className="bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark">
                         Go to Dashboard
                       </Button>
                     </Link>
@@ -259,7 +259,7 @@ export function Pay() {
                   <div className="p-8">
                     {/* Header */}
                     <div className="text-center mb-8">
-                      <div className="w-16 h-16 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/25">
+                      <div className="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-brand-primary/25">
                         <Send className="w-8 h-8 text-white" />
                       </div>
                       <h1 className="text-2xl font-bold text-gray-900 mb-2">
@@ -274,7 +274,7 @@ export function Pay() {
                       {/* Requester Info */}
                       <div className="bg-gray-50 rounded-2xl p-6 space-y-4">
                         <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-full flex items-center justify-center">
+                          <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-full flex items-center justify-center">
                             <User className="w-6 h-6 text-white" />
                           </div>
                           <div>
@@ -313,9 +313,9 @@ export function Pay() {
                       </div>
 
                       {/* Privacy Notice */}
-                      <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-paypal-blue/5 to-blue-50/50 border border-blue-100/50 p-4">
+                      <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-brand-primary/5 to-brand-primary-light/10/50 border border-brand-primary-light/20/50 p-4">
                         <div className="flex items-start gap-3">
-                          <Shield className="w-5 h-5 text-paypal-blue flex-shrink-0 mt-0.5" />
+                          <Shield className="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" />
                           <p className="text-sm text-gray-600">
                             {hasFixedAmount ? (
                               <>Your payment will be <span className="font-semibold text-gray-900">encrypted</span> for privacy.</>
@@ -333,7 +333,7 @@ export function Pay() {
                             {({ openConnectModal }) => (
                               <Button
                                 onClick={openConnectModal}
-                                className="bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700"
+                                className="bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark"
                               >
                                 <Wallet className="w-5 h-5 mr-2" />
                                 Connect Wallet
@@ -344,7 +344,7 @@ export function Pay() {
                       ) : (
                         <Button
                           onClick={handleProceed}
-                          className="w-full bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/25"
+                          className="w-full bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/25"
                           size="lg"
                         >
                           Proceed to Pay
@@ -368,7 +368,7 @@ export function Pay() {
                 <Card className="overflow-hidden">
                   <div className="p-8">
                     <div className="text-center mb-8">
-                      <div className="w-16 h-16 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/25">
+                      <div className="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-brand-primary/25">
                         <Send className="w-8 h-8 text-white" />
                       </div>
                       <h1 className="text-2xl font-bold text-gray-900 mb-2">
@@ -381,7 +381,7 @@ export function Pay() {
 
                     <div className="space-y-6">
                       {/* Amount Input */}
-                      <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-100 rounded-2xl p-8 text-center hover:border-blue-200 transition-colors">
+                      <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-100 rounded-2xl p-8 text-center hover:border-brand-primary-light/30 transition-colors">
                         <div className="inline-flex items-baseline">
                           <span className="text-4xl font-bold text-gray-300 mr-1">$</span>
                           <input
@@ -408,12 +408,12 @@ export function Pay() {
                         <motion.div
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          className="p-4 bg-paypal-navy/5 border border-paypal-blue/20 rounded-xl"
+                          className="p-4 bg-brand-navy/5 border border-brand-primary/20 rounded-xl"
                         >
                           <div className="flex items-start gap-3">
-                            <Info className="w-5 h-5 text-paypal-blue flex-shrink-0 mt-0.5" />
+                            <Info className="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" />
                             <div>
-                              <p className="text-sm font-semibold text-paypal-dark mb-1">
+                              <p className="text-sm font-semibold text-brand-primary-dark mb-1">
                                 No cUSDC Balance
                               </p>
                               <p className="text-sm text-gray-600 mb-3">
@@ -422,7 +422,7 @@ export function Pay() {
                               </p>
                               <Link
                                 to="/wallet"
-                                className="inline-flex items-center gap-2 text-sm font-semibold text-paypal-blue hover:text-paypal-dark transition-colors"
+                                className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary hover:text-brand-primary-dark transition-colors"
                               >
                                 <Wallet className="w-4 h-4" />
                                 Wrap USDC → cUSDC
@@ -447,7 +447,7 @@ export function Pay() {
                       <Button
                         onClick={handleAmountSubmit}
                         disabled={!fhevmReady}
-                        className="w-full bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/25"
+                        className="w-full bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/25"
                         size="lg"
                       >
                         Continue
@@ -470,7 +470,7 @@ export function Pay() {
                 <Card className="overflow-hidden">
                   <div className="p-8">
                     <div className="text-center mb-8">
-                      <div className="w-16 h-16 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/25">
+                      <div className="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-brand-primary/25">
                         <Shield className="w-8 h-8 text-white" />
                       </div>
                       <h1 className="text-2xl font-bold text-gray-900 mb-2">
@@ -528,7 +528,7 @@ export function Pay() {
                         <Button
                           onClick={handlePay}
                           disabled={isProcessing}
-                          className="bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/25"
+                          className="bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/25"
                           size="lg"
                         >
                           {isProcessing ? (
@@ -564,10 +564,10 @@ export function Pay() {
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                        className="w-20 h-20 border-4 border-paypal-blue/20 border-t-paypal-blue rounded-full"
+                        className="w-20 h-20 border-4 border-brand-primary/20 border-t-brand-primary rounded-full"
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <Shield className="w-8 h-8 text-paypal-blue" />
+                        <Shield className="w-8 h-8 text-brand-primary" />
                       </div>
                     </div>
                     <h2 className="text-xl font-bold text-gray-900 mb-2">
@@ -648,7 +648,7 @@ export function Pay() {
                               href={`https://sepolia.etherscan.io/tx/${txHash}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center justify-center gap-2 text-paypal-blue hover:text-paypal-dark transition-colors"
+                              className="flex items-center justify-center gap-2 text-brand-primary hover:text-brand-primary-dark transition-colors"
                             >
                               <ExternalLink className="w-4 h-4" />
                               <span className="text-sm font-medium">View on Etherscan</span>
@@ -659,7 +659,7 @@ export function Pay() {
 
                       <Button
                         onClick={() => navigate('/dashboard')}
-                        className="w-full bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700"
+                        className="w-full bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark"
                         size="lg"
                       >
                         Done

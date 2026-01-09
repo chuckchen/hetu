@@ -165,7 +165,7 @@ export function MultiSend() {
                 if (step === 'confirm') setStep('recipients');
                 else navigate('/dashboard');
               }}
-              className="flex items-center gap-2 text-gray-500 hover:text-paypal-blue mb-6 transition-colors group"
+              className="flex items-center gap-2 text-gray-500 hover:text-brand-primary mb-6 transition-colors group"
             >
               <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               <span className="font-medium">
@@ -187,7 +187,7 @@ export function MultiSend() {
                   <div className="p-8">
                     {/* Header */}
                     <div className="text-center mb-8">
-                      <div className="w-16 h-16 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/25">
+                      <div className="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-brand-primary/25">
                         <Users className="w-8 h-8 text-white" />
                       </div>
                       <h1 className="text-2xl font-bold text-gray-900 mb-2">
@@ -220,8 +220,8 @@ export function MultiSend() {
                     <div className="space-y-4 mb-6">
                       {recipients.map((recipient, index) => (
                         <div key={recipient.id} className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-paypal-navy/10 rounded-full flex items-center justify-center flex-shrink-0 mt-2">
-                            <span className="text-sm font-bold text-paypal-navy">{index + 1}</span>
+                          <div className="w-8 h-8 bg-brand-navy/10 rounded-full flex items-center justify-center flex-shrink-0 mt-2">
+                            <span className="text-sm font-bold text-brand-navy">{index + 1}</span>
                           </div>
                           <div className="flex-1 space-y-2">
                             <input
@@ -229,7 +229,7 @@ export function MultiSend() {
                               value={recipient.address}
                               onChange={(e) => updateRecipient(recipient.id, 'address', e.target.value)}
                               placeholder="0x... recipient address"
-                              className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-100 rounded-xl font-mono text-sm focus:outline-none focus:border-paypal-blue transition-colors"
+                              className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-100 rounded-xl font-mono text-sm focus:outline-none focus:border-brand-primary transition-colors"
                             />
                             <div className="relative">
                               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-bold">$</span>
@@ -238,7 +238,7 @@ export function MultiSend() {
                                 value={recipient.amount}
                                 onChange={(e) => updateRecipient(recipient.id, 'amount', e.target.value)}
                                 placeholder="0.00"
-                                className="w-full pl-8 pr-4 py-3 bg-gray-50 border-2 border-gray-100 rounded-xl font-bold text-lg focus:outline-none focus:border-paypal-blue transition-colors"
+                                className="w-full pl-8 pr-4 py-3 bg-gray-50 border-2 border-gray-100 rounded-xl font-bold text-lg focus:outline-none focus:border-brand-primary transition-colors"
                               />
                             </div>
                           </div>
@@ -255,17 +255,17 @@ export function MultiSend() {
                     {/* Add Recipient Button */}
                     <button
                       onClick={addRecipient}
-                      className="w-full py-3 border-2 border-dashed border-gray-200 rounded-xl text-gray-500 hover:border-paypal-blue hover:text-paypal-blue transition-colors flex items-center justify-center gap-2 mb-6"
+                      className="w-full py-3 border-2 border-dashed border-gray-200 rounded-xl text-gray-500 hover:border-brand-primary hover:text-brand-primary transition-colors flex items-center justify-center gap-2 mb-6"
                     >
                       <Plus className="w-5 h-5" />
                       Add Another Recipient
                     </button>
 
                     {/* Total */}
-                    <div className="bg-paypal-navy/5 rounded-xl p-4 mb-6">
+                    <div className="bg-brand-navy/5 rounded-xl p-4 mb-6">
                       <div className="flex items-center justify-between">
                         <span className="text-gray-600 font-medium">Total Amount</span>
-                        <span className="text-2xl font-bold text-paypal-navy">
+                        <span className="text-2xl font-bold text-brand-navy">
                           ${totalAmount.toFixed(2)} <span className="text-sm font-normal text-gray-500">cUSDC</span>
                         </span>
                       </div>
@@ -287,9 +287,9 @@ export function MultiSend() {
                     )}
 
                     {/* Privacy Notice */}
-                    <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-paypal-blue/5 to-blue-50/50 border border-blue-100/50 p-4 mb-6">
+                    <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-brand-primary/5 to-brand-primary-light/10/50 border border-brand-primary-light/20/50 p-4 mb-6">
                       <div className="flex items-start gap-3">
-                        <Shield className="w-5 h-5 text-paypal-blue flex-shrink-0 mt-0.5" />
+                        <Shield className="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" />
                         <p className="text-sm text-gray-600">
                           Each payment amount is <span className="font-semibold text-gray-900">individually encrypted</span>.
                           Recipients can only see their own payment.
@@ -301,7 +301,7 @@ export function MultiSend() {
                     <Button
                       onClick={handleRecipientsSubmit}
                       disabled={!hasCusdcBalance}
-                      className="w-full bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/25"
+                      className="w-full bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/25"
                       size="lg"
                     >
                       Continue
@@ -323,7 +323,7 @@ export function MultiSend() {
                 <Card className="overflow-hidden">
                   <div className="p-8">
                     <div className="text-center mb-8">
-                      <div className="w-16 h-16 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/25">
+                      <div className="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-brand-primary/25">
                         <SendIcon className="w-8 h-8 text-white" />
                       </div>
                       <h1 className="text-2xl font-bold text-gray-900 mb-2">
@@ -339,8 +339,8 @@ export function MultiSend() {
                       {recipients.map((recipient, index) => (
                         <div key={recipient.id} className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-paypal-navy/10 rounded-full flex items-center justify-center">
-                              <User className="w-5 h-5 text-paypal-navy" />
+                            <div className="w-10 h-10 bg-brand-navy/10 rounded-full flex items-center justify-center">
+                              <User className="w-5 h-5 text-brand-navy" />
                             </div>
                             <div>
                               <p className="text-sm text-gray-500">Recipient {index + 1}</p>
@@ -355,7 +355,7 @@ export function MultiSend() {
                       <div className="pt-4 border-t border-gray-200">
                         <div className="flex items-center justify-between">
                           <span className="font-semibold text-gray-900">Total</span>
-                          <span className="text-xl font-bold text-paypal-navy">${totalAmount.toFixed(2)}</span>
+                          <span className="text-xl font-bold text-brand-navy">${totalAmount.toFixed(2)}</span>
                         </div>
                       </div>
                     </div>
@@ -376,7 +376,7 @@ export function MultiSend() {
                     <Button
                       onClick={handleConfirm}
                       disabled={isLoading}
-                      className="w-full bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/25"
+                      className="w-full bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/25"
                       size="lg"
                     >
                       {isLoading ? (
@@ -409,13 +409,13 @@ export function MultiSend() {
                     <motion.div
                       animate={{ rotate: 360 }}
                       transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                      className="w-20 h-20 border-4 border-paypal-blue/20 border-t-paypal-blue rounded-full mx-auto mb-6"
+                      className="w-20 h-20 border-4 border-brand-primary/20 border-t-brand-primary rounded-full mx-auto mb-6"
                     />
                     <h2 className="text-xl font-bold text-gray-900 mb-2">Processing Multi-Send</h2>
                     <p className="text-gray-500 mb-4">
                       Encrypting {recipients.length} payments and sending to the blockchain...
                     </p>
-                    <div className="flex items-center justify-center gap-2 text-paypal-blue text-sm">
+                    <div className="flex items-center justify-center gap-2 text-brand-primary text-sm">
                       <Shield className="w-4 h-4" />
                       <span>Each amount is individually encrypted</span>
                     </div>
@@ -459,7 +459,7 @@ export function MultiSend() {
                         href={`https://sepolia.etherscan.io/tx/${txHash}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-paypal-blue hover:text-paypal-dark text-sm font-medium mb-8"
+                        className="inline-flex items-center gap-2 text-brand-primary hover:text-brand-primary-dark text-sm font-medium mb-8"
                       >
                         View on Etherscan
                         <ArrowRight className="w-4 h-4" />
@@ -483,7 +483,7 @@ export function MultiSend() {
                       </Button>
                       <Button
                         onClick={() => navigate('/dashboard')}
-                        className="flex-1 bg-gradient-to-r from-paypal-blue to-blue-600"
+                        className="flex-1 bg-gradient-to-r from-brand-primary to-brand-primary-light"
                       >
                         Back to Dashboard
                       </Button>

@@ -36,9 +36,9 @@ const megaMenus = {
       },
     ],
     quickActions: [
-      { name: 'Send Money', href: '/send', icon: Send, color: 'bg-paypal-navy' },
-      { name: 'View Wallet', href: '/wallet', icon: Wallet, color: 'bg-paypal-blue' },
-      { name: 'Activity', href: '/activity', icon: Activity, color: 'bg-paypal-navy' },
+      { name: 'Send Money', href: '/send', icon: Send, color: 'bg-brand-navy' },
+      { name: 'View Wallet', href: '/wallet', icon: Wallet, color: 'bg-brand-primary' },
+      { name: 'Activity', href: '/activity', icon: Activity, color: 'bg-brand-navy' },
     ],
   },
   business: {
@@ -72,9 +72,9 @@ const megaMenus = {
       },
     ],
     quickActions: [
-      { name: 'Contact Support', href: `${DOCS_URL}/docs/faq`, icon: HeadphonesIcon, color: 'bg-paypal-navy', external: true },
-      { name: 'Get Started', href: '/business/links/new', icon: Rocket, color: 'bg-paypal-blue' },
-      { name: 'Pricing', href: `${DOCS_URL}/docs/faq#is-it-free-to-use`, icon: CreditCard, color: 'bg-paypal-navy', external: true },
+      { name: 'Contact Support', href: `${DOCS_URL}/docs/faq`, icon: HeadphonesIcon, color: 'bg-brand-navy', external: true },
+      { name: 'Get Started', href: '/business/links/new', icon: Rocket, color: 'bg-brand-primary' },
+      { name: 'Pricing', href: `${DOCS_URL}/docs/faq#is-it-free-to-use`, icon: CreditCard, color: 'bg-brand-navy', external: true },
     ],
   },
 };
@@ -89,15 +89,15 @@ export function Header() {
 
   const dropdownVariants = {
     hidden: { opacity: 0, y: 10, scale: 0.98 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
+    visible: {
+      opacity: 1,
+      y: 0,
       scale: 1,
       transition: { duration: 0.2, ease: 'easeOut' as const }
     },
-    exit: { 
-      opacity: 0, 
-      y: 10, 
+    exit: {
+      opacity: 0,
+      y: 10,
       scale: 0.98,
       transition: { duration: 0.15 }
     },
@@ -105,7 +105,7 @@ export function Header() {
 
   const renderMegaMenu = (menuKey: 'personal' | 'business') => {
     const menu = megaMenus[menuKey];
-    
+
     return (
       <motion.div
         variants={dropdownVariants}
@@ -117,9 +117,9 @@ export function Header() {
       >
         {/* Header */}
         <div className="px-8 py-5 border-b border-gray-100">
-          <Link 
-            to={menuKey === 'business' ? '/business' : '/wallet'} 
-            className="inline-flex items-center gap-2 text-xl font-semibold text-paypal-navy hover:text-paypal-blue transition-colors group"
+          <Link
+            to={menuKey === 'business' ? '/business' : '/wallet'}
+            className="inline-flex items-center gap-2 text-xl font-semibold text-brand-navy hover:text-brand-primary transition-colors group"
           >
             {menu.title}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -138,12 +138,12 @@ export function Header() {
                   {/* Section Header */}
                   <Link
                     to={section.links[0]?.href || '#'}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-paypal-navy hover:text-paypal-blue transition-colors group mb-4"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-brand-navy hover:text-brand-primary transition-colors group mb-4"
                   >
                     {section.title}
-                    <ArrowRight className="w-4 h-4 text-paypal-blue opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-4 h-4 text-brand-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                   </Link>
-                  
+
                   {/* Section Links */}
                   <div className="space-y-1">
                     {section.links.map((link) => (
@@ -153,7 +153,7 @@ export function Header() {
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block py-2 text-sm text-gray-600 hover:text-paypal-blue transition-colors"
+                          className="block py-2 text-sm text-gray-600 hover:text-brand-primary transition-colors"
                         >
                           {link.name}
                         </a>
@@ -164,8 +164,8 @@ export function Header() {
                           className={cn(
                             'block py-2 text-sm transition-colors',
                             isActive(link.href)
-                              ? 'text-paypal-blue font-medium'
-                              : 'text-gray-600 hover:text-paypal-blue'
+                              ? 'text-brand-primary font-medium'
+                              : 'text-gray-600 hover:text-brand-primary'
                           )}
                         >
                           {link.name}
@@ -194,9 +194,9 @@ export function Header() {
                       <div className={cn('w-10 h-10 rounded-lg flex items-center justify-center', action.color)}>
                         <action.icon className="w-5 h-5 text-white" />
                       </div>
-                      <span className="font-medium text-paypal-navy text-sm">{action.name}</span>
+                      <span className="font-medium text-brand-navy text-sm">{action.name}</span>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-paypal-blue opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-5 h-5 text-brand-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                   </a>
                 ) : (
                   <Link
@@ -208,9 +208,9 @@ export function Header() {
                       <div className={cn('w-10 h-10 rounded-lg flex items-center justify-center', action.color)}>
                         <action.icon className="w-5 h-5 text-white" />
                       </div>
-                      <span className="font-medium text-paypal-navy text-sm">{action.name}</span>
+                      <span className="font-medium text-brand-navy text-sm">{action.name}</span>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-paypal-blue opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-5 h-5 text-brand-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                   </Link>
                 )
               ))}
@@ -228,10 +228,10 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-paypal-blue rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center">
                 <Shield className="w-6 h-6 text-white" />
               </div>
-              <span className="text-2xl font-bold text-paypal-blue">HETU</span>
+              <span className="text-2xl font-bold text-brand-primary">HETU</span>
             </Link>
           </div>
 
@@ -245,12 +245,12 @@ export function Header() {
                   onMouseEnter={() => setActiveDropdown('personal')}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <button 
+                  <button
                     className={cn(
                       "flex items-center gap-1.5 px-5 py-2.5 text-base font-medium rounded-lg transition-colors",
-                      activeDropdown === 'personal' 
-                        ? 'text-paypal-blue bg-paypal-navy/10' 
-                        : 'text-gray-700 hover:text-paypal-blue hover:bg-gray-50'
+                      activeDropdown === 'personal'
+                        ? 'text-brand-primary bg-brand-navy/10'
+                        : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50'
                     )}
                   >
                     Personal
@@ -270,12 +270,12 @@ export function Header() {
                   onMouseEnter={() => setActiveDropdown('business')}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <button 
+                  <button
                     className={cn(
                       "flex items-center gap-1.5 px-5 py-2.5 text-base font-medium rounded-lg transition-colors",
-                      activeDropdown === 'business' 
-                        ? 'text-paypal-blue bg-paypal-navy/10' 
-                        : 'text-gray-700 hover:text-paypal-blue hover:bg-gray-50'
+                      activeDropdown === 'business'
+                        ? 'text-brand-primary bg-brand-navy/10'
+                        : 'text-gray-700 hover:text-brand-primary hover:bg-gray-50'
                     )}
                   >
                     Business
@@ -302,7 +302,7 @@ export function Header() {
                       <Button variant="outline" size="sm" onClick={openConnectModal}>
                         Log In
                       </Button>
-                      <Button variant="primary" size="sm" onClick={openConnectModal}>
+                      <Button variant="secondary" size="sm" onClick={openConnectModal}>
                         Sign Up
                       </Button>
                     </>
@@ -310,7 +310,7 @@ export function Header() {
                 </ConnectButton.Custom>
               </div>
             ) : (
-              <ConnectButton 
+              <ConnectButton
                 showBalance={false}
                 chainStatus="icon"
                 accountStatus="avatar"
@@ -351,7 +351,7 @@ export function Header() {
                           <Button variant="outline" className="w-full" onClick={openConnectModal}>
                             Log In
                           </Button>
-                          <Button variant="primary" className="w-full" onClick={openConnectModal}>
+                          <Button variant="secondary" className="w-full" onClick={openConnectModal}>
                             Sign Up
                           </Button>
                         </>
@@ -362,13 +362,13 @@ export function Header() {
                   <div className="space-y-6">
                     {/* Personal Section */}
                     <div>
-                      <Link 
+                      <Link
                         to="/wallet"
-                        className="flex items-center gap-2 px-2 text-lg font-semibold text-paypal-navy mb-3"
+                        className="flex items-center gap-2 px-2 text-lg font-semibold text-brand-navy mb-3"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         Hetu Personal
-                        <ArrowRight className="w-4 h-4 text-paypal-blue" />
+                        <ArrowRight className="w-4 h-4 text-brand-primary" />
                       </Link>
                       {megaMenus.personal.sections.map((section) => (
                         <div key={section.title} className="mb-4">
@@ -395,7 +395,7 @@ export function Header() {
                                   className={cn(
                                     'block px-2 py-2 text-base rounded-lg',
                                     isActive(link.href)
-                                      ? 'text-paypal-blue bg-paypal-navy/10 font-medium'
+                                      ? 'text-brand-primary bg-brand-navy/10 font-medium'
                                       : 'text-gray-700 hover:bg-gray-50'
                                   )}
                                   onClick={() => setMobileMenuOpen(false)}
@@ -411,13 +411,13 @@ export function Header() {
 
                     {/* Business Section */}
                     <div>
-                      <Link 
+                      <Link
                         to="/business"
-                        className="flex items-center gap-2 px-2 text-lg font-semibold text-paypal-navy mb-3"
+                        className="flex items-center gap-2 px-2 text-lg font-semibold text-brand-navy mb-3"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         Hetu for Business
-                        <ArrowRight className="w-4 h-4 text-paypal-blue" />
+                        <ArrowRight className="w-4 h-4 text-brand-primary" />
                       </Link>
                       {megaMenus.business.sections.map((section) => (
                         <div key={section.title} className="mb-4">
@@ -444,7 +444,7 @@ export function Header() {
                                   className={cn(
                                     'block px-2 py-2 text-base rounded-lg',
                                     isActive(link.href)
-                                      ? 'text-paypal-blue bg-paypal-navy/10 font-medium'
+                                      ? 'text-brand-primary bg-brand-navy/10 font-medium'
                                       : 'text-gray-700 hover:bg-gray-50'
                                   )}
                                   onClick={() => setMobileMenuOpen(false)}

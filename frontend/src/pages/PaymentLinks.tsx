@@ -251,7 +251,7 @@ export function PaymentLinks() {
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             onClick={() => navigate('/business')}
-            className="flex items-center gap-2 text-gray-500 hover:text-paypal-blue mb-6 transition-colors group"
+            className="flex items-center gap-2 text-gray-500 hover:text-brand-primary mb-6 transition-colors group"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             <span className="font-medium">Back to Business</span>
@@ -273,13 +273,13 @@ export function PaymentLinks() {
               <button
                 onClick={() => fetchPaymentLinks()}
                 disabled={isLoading}
-                className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-600 hover:border-paypal-blue hover:text-paypal-blue transition-colors disabled:opacity-50"
+                className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-600 hover:border-brand-primary hover:text-brand-primary transition-colors disabled:opacity-50"
               >
                 <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} />
                 <span className="text-sm font-medium">Refresh</span>
               </button>
               <Link to="/business/links/new">
-                <Button className="bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/25">
+                <Button className="bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/25">
                   <Plus className="w-5 h-5 mr-2" />
                   Create New Link
                 </Button>
@@ -301,8 +301,8 @@ export function PaymentLinks() {
             ].map((stat) => (
               <Card key={stat.label} className="p-5 hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-paypal-navy/10 rounded-xl flex items-center justify-center">
-                    <stat.icon className="w-5 h-5 text-paypal-blue" />
+                  <div className="w-10 h-10 bg-brand-navy/10 rounded-xl flex items-center justify-center">
+                    <stat.icon className="w-5 h-5 text-brand-primary" />
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
@@ -325,21 +325,21 @@ export function PaymentLinks() {
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                    className="w-12 h-12 border-4 border-paypal-blue/20 border-t-paypal-blue rounded-full mx-auto mb-4"
+                    className="w-12 h-12 border-4 border-brand-primary/20 border-t-brand-primary rounded-full mx-auto mb-4"
                   />
                   <p className="text-gray-500">Loading payment links...</p>
                 </div>
               ) : paymentLinks.length === 0 ? (
                 <div className="p-16 text-center">
                   <div className="relative inline-block mb-8">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full blur-2xl opacity-60 scale-150" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-brand-primary-light/20 to-indigo-100 rounded-full blur-2xl opacity-60 scale-150" />
                     <div className="relative w-24 h-24 bg-gradient-to-br from-white to-gray-50 rounded-3xl flex items-center justify-center shadow-xl border border-gray-100">
-                      <LinkIcon className="w-12 h-12 text-paypal-navy/40" />
+                      <LinkIcon className="w-12 h-12 text-brand-navy/40" />
                     </div>
                     <motion.div
                       animate={{ scale: [1, 1.2, 1], opacity: [1, 0.8, 1] }}
                       transition={{ duration: 2, repeat: Infinity }}
-                      className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-full flex items-center justify-center shadow-lg"
+                      className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-full flex items-center justify-center shadow-lg"
                     >
                       <Sparkles className="w-4 h-4 text-white" />
                     </motion.div>
@@ -355,7 +355,7 @@ export function PaymentLinks() {
                     <Link to="/business/links/new">
                       <Button 
                         size="lg"
-                        className="bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/25 px-8"
+                        className="bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/25 px-8"
                       >
                         <Plus className="w-5 h-5 mr-2" />
                         Create First Link
@@ -372,7 +372,7 @@ export function PaymentLinks() {
                     ].map((feature) => (
                       <div key={feature.title} className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl">
                         <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm">
-                          <feature.icon className="w-5 h-5 text-paypal-blue" />
+                          <feature.icon className="w-5 h-5 text-brand-primary" />
                         </div>
                         <div>
                           <p className="font-semibold text-gray-900">{feature.title}</p>
@@ -388,7 +388,7 @@ export function PaymentLinks() {
                     <div key={link.id} className="p-6 hover:bg-gray-50 transition-colors">
                       <div className="flex items-start justify-between">
                         <div className="flex items-start gap-4">
-                          <div className="w-12 h-12 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                          <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-xl flex items-center justify-center shadow-lg">
                             <LinkIcon className="w-6 h-6 text-white" />
                           </div>
                           <div>
@@ -405,7 +405,7 @@ export function PaymentLinks() {
                               </span>
                               <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
                                 link.isActive 
-                                  ? 'bg-paypal-navy/20 text-paypal-blue' 
+                                  ? 'bg-brand-navy/20 text-brand-primary' 
                                   : 'bg-gray-100 text-gray-500'
                               }`}>
                                 {link.isActive ? 'Active' : 'Inactive'}
@@ -420,8 +420,8 @@ export function PaymentLinks() {
                             onClick={() => handleCopy(link)}
                             className={`border-2 ${
                               copiedId === link.id 
-                                ? 'border-paypal-blue text-paypal-blue bg-paypal-navy/10' 
-                                : 'border-gray-200 hover:border-paypal-blue hover:text-paypal-blue'
+                                ? 'border-brand-primary text-brand-primary bg-brand-navy/10' 
+                                : 'border-gray-200 hover:border-brand-primary hover:text-brand-primary'
                             }`}
                           >
                             {copiedId === link.id ? (

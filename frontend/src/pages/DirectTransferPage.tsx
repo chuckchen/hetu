@@ -130,7 +130,7 @@ export function DirectTransferPage() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               onClick={handleBack}
-              className="flex items-center gap-2 text-gray-500 hover:text-paypal-blue mb-6 transition-colors group"
+              className="flex items-center gap-2 text-gray-500 hover:text-brand-primary mb-6 transition-colors group"
             >
               <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               <span className="font-medium">Back</span>
@@ -217,12 +217,12 @@ export function DirectTransferPage() {
                       <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="mb-6 p-4 bg-paypal-navy/5 border border-paypal-blue/20 rounded-xl"
+                        className="mb-6 p-4 bg-brand-navy/5 border border-brand-primary/20 rounded-xl"
                       >
                         <div className="flex items-start gap-3">
-                          <Info className="w-5 h-5 text-paypal-blue flex-shrink-0 mt-0.5" />
+                          <Info className="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" />
                           <div>
-                            <p className="text-sm font-semibold text-paypal-dark mb-1">
+                            <p className="text-sm font-semibold text-brand-primary-dark mb-1">
                               No cUSDC Balance
                             </p>
                             <p className="text-sm text-gray-600 mb-3">
@@ -231,7 +231,7 @@ export function DirectTransferPage() {
                             </p>
                             <Link
                               to="/wallet"
-                              className="inline-flex items-center gap-2 text-sm font-semibold text-paypal-blue hover:text-paypal-dark transition-colors"
+                              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary hover:text-brand-primary-dark transition-colors"
                             >
                               Wrap USDC → cUSDC
                               <ArrowRight className="w-4 h-4" />
@@ -540,7 +540,7 @@ export function DirectTransferPage() {
                               href={`https://sepolia.etherscan.io/tx/${txHash}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center justify-center gap-2 text-paypal-blue hover:text-paypal-dark transition-colors"
+                              className="flex items-center justify-center gap-2 text-brand-primary hover:text-brand-primary-dark transition-colors"
                             >
                               <ExternalLink className="w-4 h-4" />
                               <span className="text-sm font-medium">View on Etherscan</span>
@@ -558,13 +558,13 @@ export function DirectTransferPage() {
                             setAmount('');
                             setTxHash(null);
                           }}
-                          className="border-2 border-gray-200 hover:border-paypal-blue hover:text-paypal-blue"
+                          className="border-2 border-gray-200 hover:border-brand-primary hover:text-brand-primary"
                         >
                           Send Another
                         </Button>
                         <Button
                           onClick={() => navigate('/dashboard')}
-                          className="bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700"
+                          className="bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark"
                         >
                           Done
                         </Button>

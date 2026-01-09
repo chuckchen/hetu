@@ -132,7 +132,7 @@ export function CreatePaymentLink() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               onClick={() => navigate('/business/links')}
-              className="flex items-center gap-2 text-gray-500 hover:text-paypal-blue mb-6 transition-colors group"
+              className="flex items-center gap-2 text-gray-500 hover:text-brand-primary mb-6 transition-colors group"
             >
               <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               <span className="font-medium">Back to Payment Links</span>
@@ -152,7 +152,7 @@ export function CreatePaymentLink() {
                   <div className="p-8">
                     {/* Header */}
                     <div className="text-center mb-8">
-                      <div className="w-16 h-16 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/25">
+                      <div className="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-brand-primary/25">
                         <LinkIcon className="w-8 h-8 text-white" />
                       </div>
                       <h1 className="text-2xl font-bold text-gray-900 mb-2">
@@ -176,7 +176,7 @@ export function CreatePaymentLink() {
                             placeholder="e.g., Product Purchase, Service Fee"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-100 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-paypal-blue focus:bg-white transition-all"
+                            className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-gray-100 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-brand-primary focus:bg-white transition-all"
                           />
                         </div>
                       </div>
@@ -192,16 +192,16 @@ export function CreatePaymentLink() {
                           onClick={() => setAnyAmount(!anyAmount)}
                           className={`w-full mb-3 p-4 rounded-xl border-2 transition-all flex items-center justify-between ${
                             anyAmount 
-                              ? 'border-paypal-blue bg-paypal-navy/10' 
+                              ? 'border-brand-primary bg-brand-navy/10' 
                               : 'border-gray-100 hover:border-gray-200'
                           }`}
                         >
-                          <span className={anyAmount ? 'text-paypal-blue font-medium' : 'text-gray-600'}>
+                          <span className={anyAmount ? 'text-brand-primary font-medium' : 'text-gray-600'}>
                             Let payer choose amount
                           </span>
                           <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition-all ${
                             anyAmount 
-                              ? 'border-paypal-blue bg-paypal-blue' 
+                              ? 'border-brand-primary bg-brand-primary' 
                               : 'border-gray-300'
                           }`}>
                             {anyAmount && <Check className="w-3 h-3 text-white" />}
@@ -240,7 +240,7 @@ export function CreatePaymentLink() {
                           value={description}
                           onChange={(e) => setDescription(e.target.value)}
                           rows={3}
-                          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-100 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-paypal-blue focus:bg-white transition-all resize-none"
+                          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-100 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-brand-primary focus:bg-white transition-all resize-none"
                         />
                       </div>
 
@@ -249,7 +249,7 @@ export function CreatePaymentLink() {
                         <motion.div
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          className="flex items-center gap-2 p-4 bg-paypal-navy/10 text-paypal-blue rounded-xl"
+                          className="flex items-center gap-2 p-4 bg-brand-navy/10 text-brand-primary rounded-xl"
                         >
                           <AlertCircle className="w-5 h-5" />
                           <span className="text-sm font-medium">{error}</span>
@@ -257,9 +257,9 @@ export function CreatePaymentLink() {
                       )}
 
                       {/* Privacy Notice */}
-                      <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-paypal-blue/5 to-blue-50/50 border border-blue-100/50 p-4">
+                      <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-brand-primary/5 to-brand-primary-light/10/50 border border-brand-primary-light/20/50 p-4">
                         <div className="flex items-start gap-3">
-                          <Shield className="w-5 h-5 text-paypal-blue flex-shrink-0 mt-0.5" />
+                          <Shield className="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" />
                           <p className="text-sm text-gray-600">
                             All payments through this link will be <span className="font-semibold text-gray-900">encrypted</span>. 
                             Payment amounts are hidden from everyone except you.
@@ -270,7 +270,7 @@ export function CreatePaymentLink() {
                       <Button
                         onClick={handleSubmit}
                         disabled={!fhevmReady || isProcessing}
-                        className="w-full bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/25"
+                        className="w-full bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/25"
                         size="lg"
                       >
                         {!fhevmReady ? 'Connecting...' : isProcessing ? 'Creating...' : 'Create Payment Link'}
@@ -296,10 +296,10 @@ export function CreatePaymentLink() {
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                        className="w-20 h-20 border-4 border-paypal-blue/20 border-t-paypal-blue rounded-full"
+                        className="w-20 h-20 border-4 border-brand-primary/20 border-t-brand-primary rounded-full"
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <Shield className="w-8 h-8 text-paypal-blue" />
+                        <Shield className="w-8 h-8 text-brand-primary" />
                       </div>
                     </div>
                     <h2 className="text-xl font-bold text-gray-900 mb-2">
@@ -325,12 +325,12 @@ export function CreatePaymentLink() {
                     {/* Success Header */}
                     <div className="text-center mb-8">
                       <div className="relative inline-block mb-6">
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full blur-2xl opacity-60 scale-150" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-brand-primary-light/20 to-indigo-100 rounded-full blur-2xl opacity-60 scale-150" />
                         <motion.div
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
                           transition={{ type: "spring", duration: 0.6 }}
-                          className="relative w-20 h-20 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-full flex items-center justify-center shadow-xl"
+                          className="relative w-20 h-20 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-full flex items-center justify-center shadow-xl"
                         >
                           <Check className="w-10 h-10 text-white" strokeWidth={3} />
                         </motion.div>
@@ -339,7 +339,7 @@ export function CreatePaymentLink() {
                           transition={{ duration: 2, repeat: Infinity }}
                           className="absolute -top-1 -right-1 w-7 h-7 bg-white rounded-full flex items-center justify-center shadow-lg"
                         >
-                          <Sparkles className="w-4 h-4 text-paypal-blue" />
+                          <Sparkles className="w-4 h-4 text-brand-primary" />
                         </motion.div>
                       </div>
                       
@@ -366,7 +366,7 @@ export function CreatePaymentLink() {
                       {/* Link Display */}
                       <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-100 rounded-2xl p-5">
                         <div className="flex items-center gap-2 mb-3">
-                          <LinkIcon className="w-4 h-4 text-paypal-blue" />
+                          <LinkIcon className="w-4 h-4 text-brand-primary" />
                           <span className="text-sm font-semibold text-gray-900">Your Payment Link</span>
                         </div>
                         <div className="flex items-center gap-2">
@@ -381,8 +381,8 @@ export function CreatePaymentLink() {
                             onClick={handleCopy}
                             className={`flex-shrink-0 border-2 px-4 ${
                               copied 
-                                ? 'border-paypal-blue text-paypal-blue bg-paypal-navy/10' 
-                                : 'border-gray-200 hover:border-paypal-blue hover:text-paypal-blue'
+                                ? 'border-brand-primary text-brand-primary bg-brand-navy/10' 
+                                : 'border-gray-200 hover:border-brand-primary hover:text-brand-primary'
                             }`}
                           >
                             {copied ? (
@@ -433,7 +433,7 @@ export function CreatePaymentLink() {
                             level="H"
                             includeMargin={false}
                             bgColor="#ffffff"
-                            fgColor="#003087"
+                            fgColor="#008B8B"
                           />
                         </div>
                         <p className="text-sm text-gray-600 font-medium mb-3">
@@ -463,7 +463,7 @@ export function CreatePaymentLink() {
                               img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgData)));
                             }
                           }}
-                          className="inline-flex items-center gap-2 text-sm text-paypal-blue hover:text-paypal-dark font-medium"
+                          className="inline-flex items-center gap-2 text-sm text-brand-primary hover:text-brand-primary-dark font-medium"
                         >
                           <Download className="w-4 h-4" />
                           Download QR Code
@@ -476,7 +476,7 @@ export function CreatePaymentLink() {
                           href={`https://sepolia.etherscan.io/tx/${txHash}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 text-paypal-blue hover:text-paypal-dark transition-colors"
+                          className="flex items-center justify-center gap-2 text-brand-primary hover:text-brand-primary-dark transition-colors"
                         >
                           <span className="text-sm font-medium">View on Etherscan</span>
                         </a>
@@ -486,7 +486,7 @@ export function CreatePaymentLink() {
                       <div className="grid grid-cols-2 gap-4">
                         <Button
                           variant="outline"
-                          className="border-2 border-gray-200 hover:border-paypal-blue hover:text-paypal-blue"
+                          className="border-2 border-gray-200 hover:border-brand-primary hover:text-brand-primary"
                           onClick={() => {
                             if (navigator.share) {
                               navigator.share({
@@ -502,7 +502,7 @@ export function CreatePaymentLink() {
                         </Button>
                         <Button
                           onClick={() => navigate('/business/links')}
-                          className="bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700"
+                          className="bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark"
                         >
                           Done
                         </Button>
@@ -516,7 +516,7 @@ export function CreatePaymentLink() {
                           setAnyAmount(false);
                           setDescription('');
                         }}
-                        className="w-full text-center text-paypal-blue hover:text-paypal-dark font-medium py-2"
+                        className="w-full text-center text-brand-primary hover:text-brand-primary-dark font-medium py-2"
                       >
                         Create Another Link
                       </button>

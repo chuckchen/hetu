@@ -24,7 +24,7 @@ import { Header, Footer } from '../components/layout';
 import { Button, TestnetBanner } from '../components/ui';
 
 // Wave SVG Component for section transitions
-const WaveDivider = ({ flip = false, color = '#001435' }: { flip?: boolean; color?: string }) => (
+const WaveDivider = ({ flip = false, color = '#002B2B' }: { flip?: boolean; color?: string }) => (
   <div className={`w-full overflow-hidden leading-none ${flip ? 'rotate-180' : ''}`}>
     <svg
       viewBox="0 0 1440 120"
@@ -115,7 +115,7 @@ const PhoneMockup = () => (
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-paypal-navy rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-brand-navy rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">A</span>
               </div>
               <span className="font-semibold text-gray-900">Hetu</span>
@@ -126,7 +126,7 @@ const PhoneMockup = () => (
           </div>
           
           {/* Balance Card */}
-          <div className="bg-paypal-navy rounded-2xl p-5 mb-4">
+          <div className="bg-brand-navy rounded-2xl p-5 mb-4">
             <p className="text-white/70 text-sm mb-1">Confidential Balance</p>
             <motion.p 
               className="text-3xl font-bold text-white mb-4"
@@ -149,7 +149,7 @@ const PhoneMockup = () => (
               { icon: QrCode, label: 'Scan' }
             ].map((action) => (
               <button key={action.label} className="flex flex-col items-center gap-2 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-                <action.icon className="w-5 h-5 text-paypal-navy" />
+                <action.icon className="w-5 h-5 text-brand-navy" />
                 <span className="text-xs font-medium text-gray-700">{action.label}</span>
               </button>
             ))}
@@ -159,15 +159,15 @@ const PhoneMockup = () => (
           <div className="bg-gray-50 rounded-xl p-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-paypal-blue/10 rounded-full flex items-center justify-center">
-                  <CheckCircle2 className="w-5 h-5 text-paypal-blue" />
+                <div className="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center">
+                  <CheckCircle2 className="w-5 h-5 text-brand-primary" />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900 text-sm">Payment Received</p>
                   <p className="text-gray-500 text-xs">Just now</p>
                 </div>
               </div>
-              <span className="font-semibold text-paypal-blue text-sm">+$•••</span>
+              <span className="font-semibold text-brand-primary text-sm">+$•••</span>
             </div>
           </div>
         </div>
@@ -190,13 +190,13 @@ const FeatureCard = ({ title, icon: Icon, index, href }: { title: string; icon: 
       whileHover={{ y: -8, transition: { duration: 0.2 } }}
       className="flex-shrink-0 w-[320px] sm:w-[380px] bg-white rounded-2xl p-8 cursor-pointer group"
     >
-      <h3 className="text-2xl font-bold text-paypal-navy mb-24">{title}</h3>
+      <h3 className="text-2xl font-bold text-brand-navy mb-24">{title}</h3>
       <div className="flex items-center justify-between">
-        <div className="w-12 h-12 bg-paypal-navy/10 rounded-full flex items-center justify-center group-hover:bg-paypal-navy/20 transition-colors">
-          <Icon className="w-6 h-6 text-paypal-navy" />
+        <div className="w-12 h-12 bg-brand-navy/10 rounded-full flex items-center justify-center group-hover:bg-brand-navy/20 transition-colors">
+          <Icon className="w-6 h-6 text-brand-navy" />
         </div>
-        <div className="w-12 h-12 bg-paypal-navy/10 rounded-full flex items-center justify-center group-hover:bg-paypal-navy group-hover:text-white transition-all">
-          <ArrowRight className="w-5 h-5 text-paypal-navy group-hover:text-white transition-colors" />
+        <div className="w-12 h-12 bg-brand-navy/10 rounded-full flex items-center justify-center group-hover:bg-brand-navy group-hover:text-white transition-all">
+          <ArrowRight className="w-5 h-5 text-brand-navy group-hover:text-white transition-colors" />
         </div>
       </div>
     </motion.div>
@@ -220,11 +220,11 @@ const LinkCard = ({ title, href }: { title: string; href: string }) => {
       <a href={href} onClick={handleClick}>
         <motion.div
           whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-          className="bg-white border border-gray-200 rounded-xl p-6 flex items-center justify-between hover:border-paypal-blue hover:shadow-lg transition-all cursor-pointer"
+          className="bg-white border border-gray-200 rounded-xl p-6 flex items-center justify-between hover:border-brand-primary hover:shadow-lg transition-all cursor-pointer"
         >
-          <span className="font-semibold text-paypal-navy text-lg">{title}</span>
-          <div className="w-10 h-10 bg-paypal-navy/10 rounded-full flex items-center justify-center">
-            <ArrowRight className="w-5 h-5 text-paypal-navy" />
+          <span className="font-semibold text-brand-navy text-lg">{title}</span>
+          <div className="w-10 h-10 bg-brand-navy/10 rounded-full flex items-center justify-center">
+            <ArrowRight className="w-5 h-5 text-brand-navy" />
           </div>
         </motion.div>
       </a>
@@ -235,11 +235,11 @@ const LinkCard = ({ title, href }: { title: string; href: string }) => {
     <Link to={href}>
       <motion.div
         whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-        className="bg-white border border-gray-200 rounded-xl p-6 flex items-center justify-between hover:border-paypal-blue hover:shadow-lg transition-all cursor-pointer"
+        className="bg-white border border-gray-200 rounded-xl p-6 flex items-center justify-between hover:border-brand-primary hover:shadow-lg transition-all cursor-pointer"
       >
-        <span className="font-semibold text-paypal-navy text-lg">{title}</span>
-        <div className="w-10 h-10 bg-paypal-navy/10 rounded-full flex items-center justify-center">
-          <ArrowRight className="w-5 h-5 text-paypal-navy" />
+        <span className="font-semibold text-brand-navy text-lg">{title}</span>
+        <div className="w-10 h-10 bg-brand-navy/10 rounded-full flex items-center justify-center">
+          <ArrowRight className="w-5 h-5 text-brand-navy" />
         </div>
       </motion.div>
     </Link>
@@ -284,9 +284,9 @@ const FeatureCardsSection = () => {
   return (
     <section className="relative">
       {/* Wave Transition */}
-      <WaveDivider color="#001435" />
+      <WaveDivider color="#002B2B" />
       
-      <div className="bg-paypal-navy py-20 -mt-1">
+      <div className="bg-brand-navy py-20 -mt-1">
         <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
           <div className="flex items-end justify-between mb-16">
             <motion.h2
@@ -307,7 +307,7 @@ const FeatureCardsSection = () => {
                 disabled={!canScrollLeft}
                 className={`w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center transition-all ${
                   canScrollLeft 
-                    ? 'hover:bg-white hover:text-paypal-navy text-white cursor-pointer' 
+                    ? 'hover:bg-white hover:text-brand-navy text-white cursor-pointer' 
                     : 'text-white/30 cursor-not-allowed'
                 }`}
               >
@@ -318,7 +318,7 @@ const FeatureCardsSection = () => {
                 disabled={!canScrollRight}
                 className={`w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center transition-all ${
                   canScrollRight 
-                    ? 'hover:bg-white hover:text-paypal-navy text-white cursor-pointer' 
+                    ? 'hover:bg-white hover:text-brand-navy text-white cursor-pointer' 
                     : 'text-white/30 cursor-not-allowed'
                 }`}
               >
@@ -399,7 +399,7 @@ export function Landing() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-paypal-blue font-semibold text-lg mb-6"
+              className="text-brand-primary font-semibold text-lg mb-6"
             >
               Powered by Zama fhEVM
             </motion.p>
@@ -409,7 +409,7 @@ export function Landing() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold text-paypal-navy leading-[1.1] mb-6"
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold text-brand-navy leading-[1.1] mb-6"
             >
               Pay private,<br />
               fast, and secure.
@@ -438,7 +438,7 @@ export function Landing() {
                     <Link to="/dashboard">
                       <Button 
                         size="lg" 
-                        className="bg-paypal-blue hover:bg-paypal-dark text-white px-10 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="bg-brand-secondary hover:bg-brand-secondary-dark text-white px-10 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-brand-secondary/25 transition-all duration-300"
                       >
                         Go to Dashboard
                       </Button>
@@ -447,7 +447,7 @@ export function Landing() {
                     <Button 
                       size="lg" 
                       onClick={openConnectModal}
-                      className="bg-paypal-blue hover:bg-paypal-dark text-white px-10 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="bg-brand-secondary hover:bg-brand-secondary-dark text-white px-10 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-brand-secondary/25 transition-all duration-300"
                     >
                       Get the App
                     </Button>
@@ -504,7 +504,7 @@ export function Landing() {
                 {/* Header */}
                 <div className="bg-gray-50 px-6 py-4 flex items-center justify-between border-b border-gray-100">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-paypal-navy rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-brand-navy rounded-lg flex items-center justify-center">
                       <span className="text-white font-bold text-sm">A</span>
                     </div>
                   </div>
@@ -518,8 +518,8 @@ export function Landing() {
                 <div className="p-6">
                   <div className="flex gap-6">
                     {/* Product Image Area */}
-                    <div className="w-40 h-40 bg-paypal-navy/5 rounded-2xl flex items-center justify-center">
-                      <Shield className="w-16 h-16 text-paypal-navy/30" />
+                    <div className="w-40 h-40 bg-brand-navy/5 rounded-2xl flex items-center justify-center">
+                      <Shield className="w-16 h-16 text-brand-navy/30" />
                     </div>
                     
                     {/* Product Details */}
@@ -527,7 +527,7 @@ export function Landing() {
                       <h4 className="font-bold text-gray-900 text-lg mb-1">Private Payment</h4>
                       <div className="flex items-center gap-1 mb-2">
                         {[1, 2, 3, 4].map((i) => (
-                          <span key={i} className="text-paypal-navy text-sm">★</span>
+                          <span key={i} className="text-brand-navy text-sm">★</span>
                         ))}
                         <span className="text-gray-300 text-sm">★</span>
                       </div>
@@ -541,17 +541,17 @@ export function Landing() {
                       
                       <p className="text-sm text-gray-500 mb-3">Status:</p>
                       <div className="flex gap-2">
-                        <span className="w-6 h-6 bg-paypal-navy rounded-full flex items-center justify-center">
+                        <span className="w-6 h-6 bg-brand-navy rounded-full flex items-center justify-center">
                           <CheckCircle2 className="w-4 h-4 text-white" />
                         </span>
-                        <span className="w-6 h-6 bg-paypal-navy/20 rounded-full" />
+                        <span className="w-6 h-6 bg-brand-navy/20 rounded-full" />
                         <span className="w-6 h-6 bg-gray-200 rounded-full" />
                       </div>
                     </div>
                   </div>
                   
                   {/* Pay Button */}
-                  <button className="w-full mt-6 bg-paypal-blue text-white py-3 rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-paypal-dark transition-colors">
+                  <button className="w-full mt-6 bg-brand-primary text-white py-3 rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-brand-primary-dark transition-colors">
                     <span className="text-xl font-bold">A</span>
                     <span>Pay with Hetu</span>
                   </button>
@@ -566,7 +566,7 @@ export function Landing() {
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInRight}
             >
-              <h2 className="text-4xl sm:text-5xl font-bold text-paypal-blue mb-6">
+              <h2 className="text-4xl sm:text-5xl font-bold text-brand-primary mb-6">
                 Simplified private checkout
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -577,14 +577,14 @@ export function Landing() {
                 {({ account, openConnectModal }) => (
                   account ? (
                     <Link to="/dashboard">
-                      <Button className="bg-paypal-blue hover:bg-paypal-dark text-white px-8 py-4 rounded-full font-semibold">
+                      <Button className="bg-brand-primary hover:bg-brand-primary-dark text-white px-8 py-4 rounded-full font-semibold">
                         Check Out With Hetu
                       </Button>
                     </Link>
                   ) : (
                     <Button 
                       onClick={openConnectModal}
-                      className="bg-paypal-blue hover:bg-paypal-dark text-white px-8 py-4 rounded-full font-semibold"
+                      className="bg-brand-primary hover:bg-brand-primary-dark text-white px-8 py-4 rounded-full font-semibold"
                     >
                       Check Out With Hetu
                     </Button>
@@ -601,9 +601,9 @@ export function Landing() {
           ============================================ */}
       <section className="relative">
         {/* Wave Transition */}
-        <WaveDivider color="#003087" />
+        <WaveDivider color="#008B8B" />
         
-        <div className="bg-paypal-blue py-24 -mt-1">
+        <div className="bg-brand-primary py-24 -mt-1">
           <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Left - Floating Avatars */}
@@ -621,10 +621,10 @@ export function Landing() {
                   className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl p-6 shadow-2xl z-10"
                 >
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 bg-paypal-navy rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-brand-navy rounded-lg flex items-center justify-center">
                       <span className="text-white font-bold">A</span>
                     </div>
-                    <div className="w-8 h-8 bg-paypal-navy rounded-full flex items-center justify-center -ml-4">
+                    <div className="w-8 h-8 bg-brand-navy rounded-full flex items-center justify-center -ml-4">
                       <span className="text-white text-xs">+$</span>
                     </div>
                   </div>
@@ -636,7 +636,7 @@ export function Landing() {
                     $•••.••
                   </motion.p>
                   <p className="text-gray-500 text-sm">Private payment</p>
-                  <p className="text-paypal-navy font-semibold text-sm">Encrypted</p>
+                  <p className="text-brand-navy font-semibold text-sm">Encrypted</p>
                 </motion.div>
                 
                 {/* Floating Avatars */}
@@ -646,7 +646,7 @@ export function Landing() {
                   className="absolute left-16 top-8"
                 >
                   <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-xl overflow-hidden">
-                    <Users className="w-12 h-12 text-paypal-navy/40" />
+                    <Users className="w-12 h-12 text-brand-navy/40" />
                   </div>
                 </motion.div>
                 
@@ -656,7 +656,7 @@ export function Landing() {
                   className="absolute left-8 bottom-16"
                 >
                   <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl overflow-hidden">
-                    <Smartphone className="w-10 h-10 text-paypal-navy/40" />
+                    <Smartphone className="w-10 h-10 text-brand-navy/40" />
                   </div>
                 </motion.div>
                 
@@ -666,7 +666,7 @@ export function Landing() {
                   className="absolute right-16 bottom-8"
                 >
                   <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-xl overflow-hidden">
-                    <Globe className="w-12 h-12 text-paypal-navy/40" />
+                    <Globe className="w-12 h-12 text-brand-navy/40" />
                   </div>
                 </motion.div>
               </motion.div>
@@ -689,14 +689,14 @@ export function Landing() {
                 {({ account, openConnectModal }) => (
                   account ? (
                     <Link to="/send">
-                      <Button className="bg-white hover:bg-white/90 text-paypal-navy px-8 py-4 rounded-full font-semibold border-2 border-white">
+                      <Button className="bg-white hover:bg-white/90 text-brand-navy px-8 py-4 rounded-full font-semibold border-2 border-white">
                         Send Payments Securely
                       </Button>
                     </Link>
                   ) : (
                     <Button 
                       onClick={openConnectModal}
-                      className="bg-white hover:bg-white/90 text-paypal-navy px-8 py-4 rounded-full font-semibold border-2 border-white"
+                      className="bg-white hover:bg-white/90 text-brand-navy px-8 py-4 rounded-full font-semibold border-2 border-white"
                     >
                       Send Payments Securely
                     </Button>
@@ -709,7 +709,7 @@ export function Landing() {
         </div>
         
         {/* Bottom Wave */}
-        <WaveDivider flip color="#003087" />
+        <WaveDivider flip color="#008B8B" />
       </section>
 
       {/* ============================================
@@ -726,7 +726,7 @@ export function Landing() {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl sm:text-5xl font-bold text-paypal-navy mb-6"
+              className="text-4xl sm:text-5xl font-bold text-brand-navy mb-6"
             >
               It's easy to begin
             </motion.h2>
@@ -767,8 +767,8 @@ export function Landing() {
                 variants={fadeInUp}
                 className="text-center"
               >
-                <div className="text-6xl font-bold text-paypal-blue/20 mb-4">{item.step}</div>
-                <h3 className="text-2xl font-bold text-paypal-navy mb-4">{item.title}</h3>
+                <div className="text-6xl font-bold text-brand-primary/20 mb-4">{item.step}</div>
+                <h3 className="text-2xl font-bold text-brand-navy mb-4">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
@@ -788,21 +788,21 @@ export function Landing() {
             variants={scaleIn}
             className="text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-paypal-navy mb-12">Zero platform fees</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy mb-12">Zero platform fees</h2>
             
             <div className="grid sm:grid-cols-2 gap-8 mb-8">
               <div className="bg-gray-50 rounded-2xl p-8">
-                <p className="text-5xl font-bold text-paypal-blue mb-2">$0</p>
+                <p className="text-5xl font-bold text-brand-primary mb-2">$0</p>
                 <p className="text-gray-600">Account opening fees</p>
               </div>
               <div className="bg-gray-50 rounded-2xl p-8">
-                <p className="text-5xl font-bold text-paypal-blue mb-2">$0</p>
+                <p className="text-5xl font-bold text-brand-primary mb-2">$0</p>
                 <p className="text-gray-600">Subscription fees</p>
               </div>
             </div>
             
             <p className="text-sm text-gray-500">
-              *Pay only minimal network gas costs. <Link to="#" className="text-paypal-blue hover:underline">Learn more about fees</Link>.
+              *Pay only minimal network gas costs. <Link to="#" className="text-brand-primary hover:underline">Learn more about fees</Link>.
             </p>
           </motion.div>
         </div>
@@ -818,7 +818,7 @@ export function Landing() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
-            className="text-3xl sm:text-4xl font-bold text-paypal-navy mb-12 text-center"
+            className="text-3xl sm:text-4xl font-bold text-brand-navy mb-12 text-center"
           >
             Discover even more ways to use Hetu
           </motion.h2>
@@ -860,10 +860,10 @@ export function Landing() {
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
-            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl font-bold text-paypal-navy mb-4">
+            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
               We support users
             </motion.h2>
-            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl font-bold text-paypal-blue mb-8">
+            <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl font-bold text-brand-primary mb-8">
               just like you
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
@@ -874,14 +874,14 @@ export function Landing() {
                 {({ account, openConnectModal }) => (
                   account ? (
                     <Link to="/dashboard">
-                      <Button className="bg-paypal-blue hover:bg-paypal-dark text-white px-10 py-4 rounded-full font-semibold text-lg">
+                      <Button className="bg-brand-primary hover:bg-brand-primary-dark text-white px-10 py-4 rounded-full font-semibold text-lg">
                         Go to Dashboard
                       </Button>
                     </Link>
                   ) : (
                     <Button 
                       onClick={openConnectModal}
-                      className="bg-paypal-blue hover:bg-paypal-dark text-white px-10 py-4 rounded-full font-semibold text-lg"
+                      className="bg-brand-primary hover:bg-brand-primary-dark text-white px-10 py-4 rounded-full font-semibold text-lg"
                     >
                       Sign Up
                     </Button>
@@ -889,7 +889,7 @@ export function Landing() {
                 )}
               </ConnectButton.Custom>
               <Link to="/business">
-                <Button variant="outline" className="border-2 border-paypal-blue text-paypal-blue hover:bg-paypal-blue hover:text-white px-10 py-4 rounded-full font-semibold text-lg">
+                <Button variant="outline" className="border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-10 py-4 rounded-full font-semibold text-lg">
                   Business Solutions
                 </Button>
               </Link>

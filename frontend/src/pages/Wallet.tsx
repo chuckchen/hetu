@@ -146,7 +146,7 @@ export function Wallet() {
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             onClick={() => navigate('/dashboard')}
-            className="flex items-center gap-2 text-gray-500 hover:text-paypal-blue mb-6 transition-colors group"
+            className="flex items-center gap-2 text-gray-500 hover:text-brand-primary mb-6 transition-colors group"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             <span className="font-medium">Back to Dashboard</span>
@@ -206,7 +206,7 @@ export function Wallet() {
             {/* cUSDC Balance - Gradient Card */}
             <div className="relative overflow-hidden rounded-2xl">
               {/* Gradient Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-paypal-blue via-blue-600 to-indigo-700" />
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-primary via-brand-primary to-brand-navy" />
               
               {/* Decorative Elements */}
               <div className="absolute inset-0 overflow-hidden">
@@ -273,7 +273,7 @@ export function Wallet() {
                     onClick={() => { setActiveTab('wrap'); setError(''); setSuccess(''); }}
                     className={`flex-1 flex items-center justify-center gap-2 py-3.5 px-4 rounded-lg font-semibold transition-all ${
                       activeTab === 'wrap'
-                        ? 'bg-white text-paypal-blue shadow-sm'
+                        ? 'bg-white text-brand-primary shadow-sm'
                         : 'text-gray-500 hover:text-gray-700'
                     }`}
                   >
@@ -284,7 +284,7 @@ export function Wallet() {
                     onClick={() => { setActiveTab('unwrap'); setError(''); setSuccess(''); }}
                     className={`flex-1 flex items-center justify-center gap-2 py-3.5 px-4 rounded-lg font-semibold transition-all ${
                       activeTab === 'unwrap'
-                        ? 'bg-white text-paypal-blue shadow-sm'
+                        ? 'bg-white text-brand-primary shadow-sm'
                         : 'text-gray-500 hover:text-gray-700'
                     }`}
                   >
@@ -307,7 +307,7 @@ export function Wallet() {
 
                 {/* Amount Input */}
                 <div className="relative mb-8">
-                  <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-100 rounded-2xl p-8 text-center hover:border-blue-200 transition-colors">
+                  <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-100 rounded-2xl p-8 text-center hover:border-brand-primary-light/30 transition-colors">
                     <div className="inline-flex items-baseline">
                       <span className="text-4xl font-bold text-gray-400 mr-1">$</span>
                       <input
@@ -325,7 +325,7 @@ export function Wallet() {
                 </div>
 
                 {/* Conversion Flow Visual */}
-                <div className="flex items-center justify-center gap-4 py-6 mb-8 bg-paypal-navy/10/50 rounded-xl">
+                <div className="flex items-center justify-center gap-4 py-6 mb-8 bg-brand-navy/10/50 rounded-xl">
                   <div className="text-center px-6">
                     <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mx-auto mb-2 shadow-sm">
                       <WalletIcon className="w-7 h-7 text-gray-600" />
@@ -335,15 +335,15 @@ export function Wallet() {
                   </div>
                   
                   <div className="flex items-center">
-                    <div className="w-12 h-[2px] bg-gradient-to-r from-gray-200 to-blue-300" />
-                    <div className="w-10 h-10 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                    <div className="w-12 h-[2px] bg-gradient-to-r from-gray-200 to-brand-primary-light/50" />
+                    <div className="w-10 h-10 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-full flex items-center justify-center shadow-lg">
                       <RefreshCw className="w-5 h-5 text-white" />
                     </div>
-                    <div className="w-12 h-[2px] bg-gradient-to-r from-blue-300 to-gray-200" />
+                    <div className="w-12 h-[2px] bg-gradient-to-r from-brand-primary-light/50 to-gray-200" />
                   </div>
                   
                   <div className="text-center px-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-2 shadow-lg">
+                    <div className="w-14 h-14 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-xl flex items-center justify-center mx-auto mb-2 shadow-lg">
                       <Shield className="w-7 h-7 text-white" />
                     </div>
                     <p className="font-bold text-gray-900">{activeTab === 'wrap' ? 'cUSDC' : 'USDC'}</p>
@@ -352,9 +352,9 @@ export function Wallet() {
                 </div>
 
                 {/* Info Box */}
-                <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-paypal-blue/5 to-blue-50/50 border border-blue-100/50 p-4 mb-6">
+                <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-brand-primary/5 to-brand-primary-light/10/50 border border-brand-primary-light/20/50 p-4 mb-6">
                   <div className="flex items-start gap-3">
-                    <Shield className="w-5 h-5 text-paypal-blue flex-shrink-0 mt-0.5" />
+                    <Shield className="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" />
                     <p className="text-sm text-gray-600">
                       {activeTab === 'wrap'
                         ? 'Wrapping encrypts your balance using FHE. Only you will be able to see your cUSDC amount.'
@@ -368,7 +368,7 @@ export function Wallet() {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 p-4 bg-paypal-navy/10 text-paypal-blue rounded-xl mb-6"
+                    className="flex items-center gap-2 p-4 bg-brand-navy/10 text-brand-primary rounded-xl mb-6"
                   >
                     <AlertCircle className="w-5 h-5" />
                     <span className="text-sm font-medium">{error}</span>
@@ -379,7 +379,7 @@ export function Wallet() {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 p-4 bg-paypal-navy/10 text-paypal-blue rounded-xl mb-6"
+                    className="flex items-center gap-2 p-4 bg-brand-navy/10 text-brand-primary rounded-xl mb-6"
                   >
                     <Check className="w-5 h-5" />
                     <span className="text-sm font-medium">{success}</span>
@@ -389,7 +389,7 @@ export function Wallet() {
                 {/* Submit Button */}
                 <Button
                   onClick={handleSubmit}
-                  className="w-full bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/25"
+                  className="w-full bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/25"
                   size="lg"
                   disabled={isLoading}
                 >

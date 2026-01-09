@@ -160,7 +160,7 @@ export function Business() {
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={() => navigate('/dashboard')}
-          className="flex items-center gap-2 text-gray-500 hover:text-paypal-blue mb-6 transition-colors group"
+          className="flex items-center gap-2 text-gray-500 hover:text-brand-primary mb-6 transition-colors group"
         >
           <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
           <span className="font-medium">Back to Dashboard</span>
@@ -179,7 +179,7 @@ export function Business() {
             <p className="text-gray-500">Manage your payments and track revenue</p>
           </div>
           <Link to="/business/links/new">
-            <Button className="bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/25">
+            <Button className="bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/25">
               <Plus className="w-5 h-5 mr-2" />
               Create Payment Link
             </Button>
@@ -197,7 +197,7 @@ export function Business() {
             >
               <div className="relative overflow-hidden rounded-3xl">
                 {/* Gradient Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-paypal-blue via-blue-600 to-indigo-700" />
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-primary via-brand-primary to-brand-navy" />
                 
                 {/* Decorative Elements */}
                 <div className="absolute inset-0 overflow-hidden">
@@ -294,8 +294,8 @@ export function Business() {
               ].map((stat) => (
                 <Card key={stat.label} className="p-5 hover:shadow-md transition-shadow">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-paypal-navy/10 rounded-xl flex items-center justify-center">
-                      <stat.icon className="w-5 h-5 text-paypal-blue" />
+                    <div className="w-10 h-10 bg-brand-navy/10 rounded-xl flex items-center justify-center">
+                      <stat.icon className="w-5 h-5 text-brand-primary" />
                     </div>
                   </div>
                   <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
@@ -314,14 +314,14 @@ export function Business() {
                 <div className="p-6 border-b border-gray-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-paypal-navy/10 rounded-xl flex items-center justify-center">
-                        <Activity className="w-5 h-5 text-paypal-blue" />
+                      <div className="w-10 h-10 bg-brand-navy/10 rounded-xl flex items-center justify-center">
+                        <Activity className="w-5 h-5 text-brand-primary" />
                       </div>
                       <h2 className="text-xl font-bold text-gray-900">Recent Payments</h2>
                     </div>
                     <Link 
                       to="/activity" 
-                      className="text-sm text-paypal-blue hover:text-paypal-dark font-medium"
+                      className="text-sm text-brand-primary hover:text-brand-primary-dark font-medium"
                     >
                       View All
                     </Link>
@@ -333,7 +333,7 @@ export function Business() {
                     <motion.div
                       animate={{ rotate: 360 }}
                       transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                      className="w-10 h-10 border-4 border-paypal-blue/20 border-t-paypal-blue rounded-full mx-auto mb-4"
+                      className="w-10 h-10 border-4 border-brand-primary/20 border-t-brand-primary rounded-full mx-auto mb-4"
                     />
                     <p className="text-gray-500 text-sm">Loading payments...</p>
                   </div>
@@ -347,7 +347,7 @@ export function Business() {
                       Create a payment link to start receiving encrypted payments.
                     </p>
                     <Link to="/business/links/new">
-                      <Button variant="outline" className="border-2 border-gray-200 hover:border-paypal-blue hover:text-paypal-blue">
+                      <Button variant="outline" className="border-2 border-gray-200 hover:border-brand-primary hover:text-brand-primary">
                         <Plus className="w-4 h-4 mr-2" />
                         Create Payment Link
                       </Button>
@@ -373,7 +373,7 @@ export function Business() {
                               href={`https://sepolia.etherscan.io/tx/${payment.txHash}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-xs text-paypal-blue hover:underline"
+                              className="text-xs text-brand-primary hover:underline"
                             >
                               View tx
                             </a>
@@ -399,7 +399,7 @@ export function Business() {
                 <div className="p-5 border-b border-gray-100">
                   <div className="flex items-center justify-between">
                     <h2 className="text-lg font-bold text-gray-900">Payment Links</h2>
-                    <Link to="/business/links" className="text-sm text-paypal-blue hover:text-paypal-dark font-medium">
+                    <Link to="/business/links" className="text-sm text-brand-primary hover:text-brand-primary-dark font-medium">
                       Manage
                     </Link>
                   </div>
@@ -407,14 +407,14 @@ export function Business() {
 
                 {paymentLinks.length === 0 ? (
                   <div className="p-8 text-center">
-                    <div className="w-14 h-14 bg-paypal-navy/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <LinkIcon className="w-7 h-7 text-paypal-blue" />
+                    <div className="w-14 h-14 bg-brand-navy/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <LinkIcon className="w-7 h-7 text-brand-primary" />
                     </div>
                     <p className="text-gray-500 text-sm mb-4">
                       No payment links yet
                     </p>
                     <Link to="/business/links/new">
-                      <Button size="sm" className="bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700">
+                      <Button size="sm" className="bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark">
                         <Plus className="w-4 h-4 mr-1" />
                         Create Link
                       </Button>
@@ -446,11 +446,11 @@ export function Business() {
                   ].map((action) => (
                     <Link key={action.to} to={action.to} className="block">
                       <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors group">
-                        <div className="w-10 h-10 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+                        <div className="w-10 h-10 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-xl flex items-center justify-center shadow-lg shadow-brand-primary/20 group-hover:scale-105 transition-transform">
                           <action.icon className="w-5 h-5 text-white" />
                         </div>
                         <span className="font-medium text-gray-900">{action.title}</span>
-                        <ArrowUpRight className="w-4 h-4 text-gray-300 ml-auto group-hover:text-paypal-blue transition-colors" />
+                        <ArrowUpRight className="w-4 h-4 text-gray-300 ml-auto group-hover:text-brand-primary transition-colors" />
                       </div>
                     </Link>
                   ))}
@@ -464,11 +464,11 @@ export function Business() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-paypal-blue/10 via-blue-50 to-indigo-50 border border-blue-100/50">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-transparent rounded-full blur-2xl" />
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-primary/10 via-brand-primary-light/10 to-brand-primary-light/5 border border-brand-primary-light/20/50">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-primary-light/20 to-transparent rounded-full blur-2xl" />
                 <div className="relative p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-xl flex items-center justify-center shadow-lg">
                       <Shield className="w-6 h-6 text-white" />
                     </div>
                     <div>

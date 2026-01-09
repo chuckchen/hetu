@@ -31,7 +31,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               'transition-all duration-200',
               'placeholder:text-gray-400',
               'hover:border-gray-400',
-              'focus:outline-none focus:ring-2 focus:ring-paypal-light focus:border-transparent',
+              'focus:outline-none focus:ring-2 focus:ring-brand-primary-light focus:border-transparent',
               'disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed',
               leftIcon && 'pl-10',
               rightIcon && 'pr-10',

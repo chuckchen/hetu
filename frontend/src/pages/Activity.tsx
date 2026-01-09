@@ -97,7 +97,7 @@ export function Activity() {
       case 'received':
         return <ArrowDownLeft className="w-5 h-5 text-green-500" />;
       case 'refund':
-        return <RotateCcw className="w-5 h-5 text-paypal-blue" />;
+        return <RotateCcw className="w-5 h-5 text-brand-primary" />;
     }
   };
 
@@ -119,7 +119,7 @@ export function Activity() {
       case 'received':
         return 'text-green-600';
       case 'refund':
-        return 'text-paypal-blue';
+        return 'text-brand-primary';
     }
   };
 
@@ -134,7 +134,7 @@ export function Activity() {
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             onClick={() => navigate('/dashboard')}
-            className="flex items-center gap-2 text-gray-500 hover:text-paypal-blue mb-6 transition-colors group"
+            className="flex items-center gap-2 text-gray-500 hover:text-brand-primary mb-6 transition-colors group"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             <span className="font-medium">Back to Dashboard</span>
@@ -157,7 +157,7 @@ export function Activity() {
                 <button 
                   onClick={() => refetch()}
                   disabled={isLoading}
-                  className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-600 hover:border-paypal-blue hover:text-paypal-blue transition-colors disabled:opacity-50"
+                  className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-600 hover:border-brand-primary hover:text-brand-primary transition-colors disabled:opacity-50"
                 >
                   <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} />
                   <span className="text-sm font-medium">Refresh</span>
@@ -165,7 +165,7 @@ export function Activity() {
                 <button 
                   onClick={handleExport}
                   disabled={transactions.length === 0}
-                  className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-600 hover:border-paypal-blue hover:text-paypal-blue transition-colors disabled:opacity-50"
+                  className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-600 hover:border-brand-primary hover:text-brand-primary transition-colors disabled:opacity-50"
                 >
                   <Download className="w-4 h-4" />
                   <span className="text-sm font-medium">Export</span>
@@ -184,10 +184,10 @@ export function Activity() {
             {[
               { label: 'Sent', value: stats.totalSent.toString(), icon: ArrowUpRight, color: 'text-red-500' },
               { label: 'Received', value: stats.totalReceived.toString(), icon: ArrowDownLeft, color: 'text-green-500' },
-              { label: 'Refunds', value: stats.totalRefunds.toString(), icon: RotateCcw, color: 'text-paypal-blue' },
+              { label: 'Refunds', value: stats.totalRefunds.toString(), icon: RotateCcw, color: 'text-brand-primary' },
             ].map((stat) => (
               <Card key={stat.label} className="p-5 text-center hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-gradient-to-br from-paypal-blue/10 to-blue-50 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-brand-primary/10 to-brand-primary-light/10 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <stat.icon className={`w-6 h-6 ${stat.color}`} />
                 </div>
                 <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
@@ -213,7 +213,7 @@ export function Activity() {
                       placeholder="Search by address..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-paypal-blue/20 focus:border-paypal-blue transition-all"
+                      className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all"
                     />
                   </div>
 
@@ -225,7 +225,7 @@ export function Activity() {
                         onClick={() => setFilter(type)}
                         className={`flex-1 md:px-5 py-2.5 rounded-lg text-sm font-medium transition-all capitalize ${
                           filter === type
-                            ? 'bg-white text-paypal-blue shadow-sm'
+                            ? 'bg-white text-brand-primary shadow-sm'
                             : 'text-gray-500 hover:text-gray-700'
                         }`}
                       >
@@ -243,11 +243,11 @@ export function Activity() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-paypal-blue/5 via-blue-50/50 to-indigo-50/30 border border-blue-100/50 mb-6"
+            className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-brand-primary/5 via-brand-primary-light/10/50 to-brand-primary-light/5/30 border border-brand-primary-light/20/50 mb-6"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full blur-2xl" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-primary-light/10 to-transparent rounded-full blur-2xl" />
             <div className="relative p-4 flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 flex-shrink-0">
+              <div className="w-10 h-10 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-xl flex items-center justify-center shadow-lg shadow-brand-primary/20 flex-shrink-0">
                 <Shield className="w-5 h-5 text-white" />
               </div>
               <p className="text-sm text-gray-600">
@@ -269,7 +269,7 @@ export function Activity() {
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                    className="w-12 h-12 border-4 border-paypal-blue/20 border-t-paypal-blue rounded-full mx-auto mb-4"
+                    className="w-12 h-12 border-4 border-brand-primary/20 border-t-brand-primary rounded-full mx-auto mb-4"
                   />
                   <p className="text-gray-500">Loading transactions...</p>
                 </div>
@@ -288,7 +288,7 @@ export function Activity() {
                         <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
                           tx.type === 'sent' ? 'bg-red-50' :
                           tx.type === 'received' ? 'bg-green-50' :
-                          'bg-paypal-blue/10'
+                          'bg-brand-primary/10'
                         }`}>
                           {getTransactionIcon(tx.type)}
                         </div>
@@ -316,7 +316,7 @@ export function Activity() {
                           <p className={`font-bold ${
                             tx.type === 'sent' ? 'text-red-600' :
                             tx.type === 'received' ? 'text-green-600' :
-                            'text-paypal-blue'
+                            'text-brand-primary'
                           }`}>
                             {tx.type === 'sent' ? '-' : '+'}$••••••
                           </p>
@@ -330,7 +330,7 @@ export function Activity() {
                           rel="noopener noreferrer"
                           className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
                         >
-                          <ExternalLink className="w-4 h-4 text-gray-400 hover:text-paypal-blue" />
+                          <ExternalLink className="w-4 h-4 text-gray-400 hover:text-brand-primary" />
                         </a>
                       </div>
                     </motion.div>
@@ -340,14 +340,14 @@ export function Activity() {
                 /* Empty State */
                 <div className="p-16 text-center">
                   <div className="relative inline-block mb-8">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full blur-2xl opacity-60 scale-150" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-brand-primary-light/20 to-indigo-100 rounded-full blur-2xl opacity-60 scale-150" />
                     <div className="relative w-24 h-24 bg-gradient-to-br from-white to-gray-50 rounded-3xl flex items-center justify-center shadow-xl border border-gray-100">
-                      <Clock className="w-12 h-12 text-paypal-navy/40" />
+                      <Clock className="w-12 h-12 text-brand-navy/40" />
                     </div>
                     <motion.div
                       animate={{ scale: [1, 1.2, 1], opacity: [1, 0.8, 1] }}
                       transition={{ duration: 2, repeat: Infinity }}
-                      className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-full flex items-center justify-center shadow-lg"
+                      className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-full flex items-center justify-center shadow-lg"
                     >
                       <Sparkles className="w-4 h-4 text-white" />
                     </motion.div>
@@ -367,7 +367,7 @@ export function Activity() {
                     <Link to="/send">
                       <Button 
                         size="lg"
-                        className="bg-gradient-to-r from-paypal-blue to-blue-600 hover:from-paypal-dark hover:to-blue-700 shadow-lg shadow-blue-500/25 px-8"
+                        className="bg-gradient-to-r from-brand-primary to-brand-primary-light hover:from-brand-primary-dark hover:to-brand-primary-dark shadow-lg shadow-brand-primary/25 px-8"
                       >
                         <Send className="w-5 h-5 mr-2" />
                         Send Money
@@ -377,7 +377,7 @@ export function Activity() {
                       <Button 
                         variant="outline" 
                         size="lg"
-                        className="border-2 border-gray-200 hover:border-paypal-blue hover:text-paypal-blue px-8"
+                        className="border-2 border-gray-200 hover:border-brand-primary hover:text-brand-primary px-8"
                       >
                         <Plus className="w-5 h-5 mr-2" />
                         Add Funds

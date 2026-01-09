@@ -197,7 +197,7 @@ export function Refunds() {
             <h2 className="text-xl font-bold text-gray-900 mb-2">Wallet Not Connected</h2>
             <p className="text-gray-500 mb-6">Please connect your wallet to manage refunds.</p>
             <Link to="/dashboard">
-              <Button className="bg-gradient-to-r from-paypal-blue to-blue-600">
+              <Button className="bg-gradient-to-r from-brand-primary to-brand-primary-light">
                 Go to Dashboard
               </Button>
             </Link>
@@ -219,7 +219,7 @@ export function Refunds() {
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             onClick={() => navigate('/dashboard')}
-            className="flex items-center gap-2 text-gray-500 hover:text-paypal-blue mb-6 transition-colors group"
+            className="flex items-center gap-2 text-gray-500 hover:text-brand-primary mb-6 transition-colors group"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             <span className="font-medium">Back to Dashboard</span>
@@ -238,7 +238,7 @@ export function Refunds() {
                 </h1>
                 <p className="text-gray-500">Issue refunds for payments you've received</p>
               </div>
-              <div className="w-14 h-14 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/25">
+              <div className="w-14 h-14 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-2xl flex items-center justify-center shadow-lg shadow-brand-primary/25">
                 <RotateCcw className="w-7 h-7 text-white" />
               </div>
             </div>
@@ -259,8 +259,8 @@ export function Refunds() {
               <p className="text-sm text-gray-500">Total Received</p>
             </Card>
             <Card className="p-5 text-center hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-gradient-to-br from-paypal-blue/10 to-blue-50 rounded-xl flex items-center justify-center mx-auto mb-3">
-                <Clock className="w-6 h-6 text-paypal-blue" />
+              <div className="w-12 h-12 bg-gradient-to-br from-brand-primary/10 to-brand-primary-light/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Clock className="w-6 h-6 text-brand-primary" />
               </div>
               <p className="text-2xl font-bold text-gray-900">{eligibleCount}</p>
               <p className="text-sm text-gray-500">Eligible for Refund</p>
@@ -279,11 +279,11 @@ export function Refunds() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
-            className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-paypal-blue/5 via-blue-50/50 to-indigo-50/30 border border-blue-100/50 mb-6"
+            className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-brand-primary/5 via-brand-primary-light/10/50 to-brand-primary-light/5/30 border border-brand-primary-light/20/50 mb-6"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full blur-2xl" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-primary-light/10 to-transparent rounded-full blur-2xl" />
             <div className="relative p-4 flex items-start gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 flex-shrink-0">
+              <div className="w-10 h-10 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-xl flex items-center justify-center shadow-lg shadow-brand-primary/20 flex-shrink-0">
                 <Info className="w-5 h-5 text-white" />
               </div>
               <div>
@@ -313,7 +313,7 @@ export function Refunds() {
                       placeholder="Search by sender address..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-paypal-blue/20 focus:border-paypal-blue transition-all"
+                      className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all"
                     />
                   </div>
 
@@ -325,7 +325,7 @@ export function Refunds() {
                         onClick={() => setFilter(type)}
                         className={`flex-1 md:px-5 py-2.5 rounded-lg text-sm font-medium transition-all capitalize ${
                           filter === type
-                            ? 'bg-white text-paypal-blue shadow-sm'
+                            ? 'bg-white text-brand-primary shadow-sm'
                             : 'text-gray-500 hover:text-gray-700'
                         }`}
                       >
@@ -350,7 +350,7 @@ export function Refunds() {
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                    className="w-12 h-12 border-4 border-paypal-blue/20 border-t-paypal-blue rounded-full mx-auto mb-4"
+                    className="w-12 h-12 border-4 border-brand-primary/20 border-t-brand-primary rounded-full mx-auto mb-4"
                   />
                   <p className="text-gray-500">Loading received payments...</p>
                 </div>
@@ -401,7 +401,7 @@ export function Refunds() {
                               variant="outline"
                               size="sm"
                               onClick={() => handleRefundClick(payment)}
-                              className="border-paypal-blue text-paypal-blue hover:bg-paypal-blue hover:text-white"
+                              className="border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white"
                             >
                               <RotateCcw className="w-4 h-4 mr-1" />
                               Refund
@@ -413,7 +413,7 @@ export function Refunds() {
                             rel="noopener noreferrer"
                             className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
                           >
-                            <ExternalLink className="w-4 h-4 text-gray-400 hover:text-paypal-blue" />
+                            <ExternalLink className="w-4 h-4 text-gray-400 hover:text-brand-primary" />
                           </a>
                         </div>
                       </div>
@@ -424,14 +424,14 @@ export function Refunds() {
                 /* Empty State */
                 <div className="p-16 text-center">
                   <div className="relative inline-block mb-8">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full blur-2xl opacity-60 scale-150" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-brand-primary-light/20 to-indigo-100 rounded-full blur-2xl opacity-60 scale-150" />
                     <div className="relative w-24 h-24 bg-gradient-to-br from-white to-gray-50 rounded-3xl flex items-center justify-center shadow-xl border border-gray-100">
-                      <RotateCcw className="w-12 h-12 text-paypal-navy/40" />
+                      <RotateCcw className="w-12 h-12 text-brand-navy/40" />
                     </div>
                     <motion.div
                       animate={{ scale: [1, 1.2, 1], opacity: [1, 0.8, 1] }}
                       transition={{ duration: 2, repeat: Infinity }}
-                      className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-paypal-blue to-blue-600 rounded-full flex items-center justify-center shadow-lg"
+                      className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-brand-primary to-brand-primary-light rounded-full flex items-center justify-center shadow-lg"
                     >
                       <Sparkles className="w-4 h-4 text-white" />
                     </motion.div>
@@ -501,10 +501,10 @@ export function Refunds() {
                         <p className="text-sm text-gray-500 mb-1">Recipient (Original Sender)</p>
                         <p className="font-mono text-gray-900">{formatAddress(selectedPayment.sender, 10)}</p>
                       </div>
-                      <div className="bg-blue-50 rounded-xl p-4 mb-6">
+                      <div className="bg-brand-primary-light/10 rounded-xl p-4 mb-6">
                         <div className="flex items-start gap-2">
-                          <Info className="w-4 h-4 text-paypal-blue mt-0.5 flex-shrink-0" />
-                          <p className="text-sm text-paypal-blue">
+                          <Info className="w-4 h-4 text-brand-primary mt-0.5 flex-shrink-0" />
+                          <p className="text-sm text-brand-primary">
                             The full encrypted amount will be returned. Amounts are kept private and encrypted on-chain for your protection.
                           </p>
                         </div>
@@ -521,7 +521,7 @@ export function Refunds() {
                           Cancel
                         </Button>
                         <Button
-                          className="flex-1 bg-gradient-to-r from-paypal-blue to-blue-600"
+                          className="flex-1 bg-gradient-to-r from-brand-primary to-brand-primary-light"
                           onClick={handleRefundConfirm}
                         >
                           <RotateCcw className="w-4 h-4 mr-2" />
@@ -537,7 +537,7 @@ export function Refunds() {
                     <motion.div
                       animate={{ rotate: 360 }}
                       transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                      className="w-16 h-16 border-4 border-paypal-blue/20 border-t-paypal-blue rounded-full mx-auto mb-6"
+                      className="w-16 h-16 border-4 border-brand-primary/20 border-t-brand-primary rounded-full mx-auto mb-6"
                     />
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Processing Refund</h3>
                     <p className="text-gray-500">Please confirm the transaction in your wallet...</p>
@@ -554,7 +554,7 @@ export function Refunds() {
                       The payment has been returned to {formatAddress(selectedPayment.sender, 6)}.
                     </p>
                     <Button
-                      className="bg-gradient-to-r from-paypal-blue to-blue-600"
+                      className="bg-gradient-to-r from-brand-primary to-brand-primary-light"
                       onClick={closeModal}
                     >
                       <Check className="w-4 h-4 mr-2" />
@@ -579,7 +579,7 @@ export function Refunds() {
                         Cancel
                       </Button>
                       <Button
-                        className="flex-1 bg-gradient-to-r from-paypal-blue to-blue-600"
+                        className="flex-1 bg-gradient-to-r from-brand-primary to-brand-primary-light"
                         onClick={() => setRefundStep('confirm')}
                       >
                         Try Again

@@ -26,14 +26,14 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variants = {
       primary:
-        'bg-paypal-navy text-white hover:bg-paypal-dark focus-visible:ring-paypal-navy',
+        'bg-brand-primary text-white hover:bg-brand-primary-dark focus-visible:ring-brand-primary',
       secondary:
-        'bg-paypal-navy/10 text-paypal-navy hover:bg-paypal-navy/20 focus-visible:ring-paypal-navy',
+        'bg-brand-secondary text-white hover:bg-brand-secondary-dark focus-visible:ring-brand-secondary',
       outline:
-        'border-2 border-paypal-navy text-paypal-navy bg-white hover:bg-paypal-navy hover:text-white focus-visible:ring-paypal-navy',
+        'border-2 border-brand-primary text-brand-primary bg-white hover:bg-brand-primary hover:text-white focus-visible:ring-brand-primary',
       ghost:
-        'text-paypal-navy hover:bg-paypal-navy/10 focus-visible:ring-paypal-navy',
-      link: 'text-paypal-navy underline-offset-4 hover:underline focus-visible:ring-paypal-navy p-0',
+        'text-brand-primary hover:bg-brand-primary/10 focus-visible:ring-brand-primary',
+      link: 'text-brand-primary underline-offset-4 hover:underline focus-visible:ring-brand-primary p-0',
     };
 
     const sizes = {
